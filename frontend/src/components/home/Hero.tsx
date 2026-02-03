@@ -1,0 +1,40 @@
+import heroImage from '../../assets/Hero-image.png'; 
+const Hero = () => {
+  return (
+    <section className="relative w-full h-[600px] overflow-hidden">
+      {/* Background Image with Overlay */}
+      <div 
+       className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ 
+          backgroundImage: `url(${heroImage})` 
+        }}
+      >
+        {/* Overlay لضمان وضوح الكلام */}
+        <div className="absolute inset-0 bg-white/30"></div>
+      </div>
+
+      {/* Content Container */}
+      <div className="container mx-auto h-full flex items-center relative z-10 px-4">
+        <div className="max-w-2xl">
+          {/* Caption */}
+          <h5 className="text-caption text-secondary uppercase tracking-widest mb-2">
+            Caring for Life
+          </h5>
+          
+          {/* Main Title - Display 1 */}
+          <h1 className="text-display-1 text-primary mb-6 leading-tight">
+            Leading the Way <br />
+            in Medical Excellence
+          </h1>
+
+          {/* Button - Text Button Style */}
+          <button className="bg-accent text-primary px-8 py-3 rounded-full text-button font-medium hover:bg-primary hover:text-white transition duration-300 shadow-md">
+            Our Services
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Hero;

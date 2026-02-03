@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #1F2B6C;
+  --color-secondary: #159EEC;
+  --color-accent: #BFD2F8;
+  --color-black: #212124;
+  --color-white: #FFFFFF;
+  --font-display: "Outfit", sans-serif;
+
+  /* Fonts Family */
+  --font-yeseva: "Yeseva One", serif;
+  --font-work: "Work Sans", sans-serif;
+
+  /* Custom Typography Sizes & Styles */
+  --text-display-1: 48px;
+  --text-display-1--font-family: var(--font-yeseva);
+
+  --text-display-2: 32px;
+  --text-display-2--font-family: var(--font-yeseva);
+
+  --text-title: 26px;
+  --text-title--font-family: var(--font-work);
+  --text-title--font-weight: 500;
+
+  --text-caption: 18px;
+  --text-caption--font-family: var(--font-work);
+  --text-caption--font-weight: 700;
+
+  --text-body: 16px;
+  --text-body--font-family: var(--font-work);
+
+  --text-body-2: 18px;
+  --text-body-2--font-family: var(--font-work);
+
+  --text-button: 16px;
+  --text-button--font-family: var(--font-work);
+  --text-button--font-weight: 500;
+
+  --text-small: 14px;
+  --text-small--font-family: var(--font-work);
+}
+
+
+body {
+  font-family: var(--font-display);
+}
