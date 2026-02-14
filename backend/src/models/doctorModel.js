@@ -11,7 +11,7 @@ const doctorSchema = mongoose.Schema({
     },
     specialty: { 
      type: mongoose.Schema.Types.ObjectId,
-       ref: 'Specialty',
+     ref: 'Specialty',
     required: true
     },
     bio: { 

@@ -1,18 +1,26 @@
+export interface SymptomDetail {
+  symptom: string;
+  recommendation: string;
+}
 export interface Specialty {
   _id: string;
   name: string;
   icon?: string;
   description?: string;
+  slug?: string;
 }
 
 export interface Doctor {
   _id: string;
   name: string;
   title: string;
-  specialty: Specialty; // لاحظ إننا عملنا Populate هنا
-  bio: string;
-  image: string;
-  socialLinks: {
+specialty: {
+    _id: string;
+    name: string;
+  } | string; // ممكن يكون Object أو String (ID)
+bio: string;
+image: string;
+socialLinks: {
     linkedin: string;
     facebook: string;
     instagram: string;
@@ -24,9 +32,10 @@ export interface Service {
   _id: string;
   name: string;
   description: string;
-  image: string;
-  icon: string;
-  slug: string;
+  longDescription?: string;
+ image?: string;
+  icon?: string;
+  slug?: string;
 }
 
 export interface Appointment {
@@ -54,4 +63,24 @@ export interface Blog {
   views: number;
   createdAt: string;
   updatedAt: string;
+}
+
+export interface Message {
+  _id: string;
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+  status: 'new' | 'read' | 'replied';
+  createdAt: string;
+  updatedAt: string;
+}
+export interface BodyPartData {
+  bodyPart: string;
+  labelAr: string;
+  commonConditions: SymptomDetail[];
+  specialty?: {
+    _id: string;
+    name: string;
+  };
 }

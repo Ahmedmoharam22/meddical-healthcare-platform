@@ -1,40 +1,60 @@
 const services = [
     {
-        name: "Free Checkup",
-        description: "lorem ipsum dolor sit amet consectetur adipisicing elit",
-        image: "https://images.unsplash.com/photo-1579684388669-c266630b912e?w=800",
-        icon: "fa-stethoscope",
+        name: "فحص طبي مجاني",
+        description: "نقدم فحوصات دورية مجانية لضمان سلامة جميع أفراد الأسرة.",
+        image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=800&q=80",
+        longDescription: "في مجمع النور الطبي، نؤمن أن الوقاية خير من العلاج. تشمل الفحوصات المجانية قياس الضغط والسكر والوزن وتقديم نصائح عامة حول الصحة البدنية من قبل أطقم تمريض مدربة.",
+        icon: "stethoscope",
         slug: "free-checkup"
     },
     {
-        name: "Cardiology",
-        description: "lorem ipsum dolor sit amet consectetur adipisicing elit   ",
-        image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800",
-        icon: "fa-heartbeat",
+        name: "قسم القلب والأوعية",
+        description: "رعاية قلبية متكاملة تحت إشراف نخبة من كبار استشاريي القلب.",
+        image: "https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?w=800&q=80",
+        longDescription: "نوفر أحدث أجهزة رسم القلب (ECG) والموجات الصوتية للقلب (Echo). يهتم القسم بتشخيص وعلاج حالات ضغط الدم، اضطراب ضربات القلب، وقصور الشرايين التاجية.",
+        icon: "heart",
         slug: "cardiology"
     },
     {
-        name: "DNA Testing",
-        description: "lorem ipsum dolor sit amet consectetur adipisicing elit",
-        image: "https://images.unsplash.com/photo-1583912267550-d44d7a125e7e?w=800",
-        icon: "fa-dna",
+        name: "التحاليل والوراثة",
+        description: "أدق نتائج التحاليل الطبية وفحوصات الحمض النووي بأحدث التقنيات.",
+        image: "https://images.unsplash.com/photo-1579152276503-38865f39641e?w=800&q=80",
+        longDescription: "مختبر مجمع النور مجهز بأحدث الأجهزة الأوتوماتيكية لضمان سرعة ودقة النتائج. نقدم كافة أنواع تحاليل الدم، الهرمونات، والتحاليل الوراثية المتقدمة.",
+        icon: "microscope",
         slug: "dna-testing"
     },
     {
-        name: "Blood Bank",
-        description: "lorem ipsum dolor sit amet consectetur adipisicing elit",
-        image: "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800",
-        icon: "fa-tint",
+        name: "بنك الدم والتحليل",
+        description: "خدمات فحص فصائل الدم وتوفير الوحدات للحالات الطارئة.",
+        image: "https://images.unsplash.com/photo-1581595221475-1229edb39239?w=800&q=80",
+        longDescription: "نعمل وفق أعلى معايير الأمان والجودة العالمية في فحص فصائل الدم وتخزينها لضمان جاهزيتنا الدائمة لخدمة المرضى في أي وقت.",
+        icon: "activity",
         slug: "blood-bank"
     },
     {
-        name: "Cancer Screening",
-        description: "lorem ipsum dolor sit amet consectetur adipisicing elit",
-        image: "https://images.unsplash.com/photo-1579684388669-c266630b912e?w=800",
-        icon: "fa-stethoscope",
+        name: "الكشف المبكر عن الأورام",
+        description: "برامج متخصصة للكشف المبكر والوقاية بأحدث البروتوكولات العالمية.",
+        image: "https://images.unsplash.com/photo-1516549655169-df83a0774514?w=800&q=80",
+        longDescription: "يوفر القسم خدمات الفحص الدوري للأورام باستخدام الأشعة والتحاليل الدقيقة، بهدف الاكتشاف المبكر الذي يرفع نسب الشفاء إلى أعلى مستوياتها.",
+        icon: "thermometer",
         slug: "cancer-screening"
     },
-
+    {
+        name: "قسم طب الأطفال",
+        description: "عناية فائقة بصحة أطفالكم من الولادة وحتى سن المراهقة.",
+        image: "https://images.unsplash.com/photo-1584820927498-cdf50e9046f4?w=800&q=80",
+        longDescription: "نقدم خدمات التطعيمات، متابعة النمو، وعلاج أمراض الأطفال الشائعة في بيئة مريحة وصديقة للطفل لتقليل رهبة الكشف الطبي.",
+        icon: "baby",
+        slug: "pediatric-care"
+    },
+    {
+        name: "جراحة العظام والمفاصل",
+        description: "علاج الكسور وإصابات الملاعب وتغيير المفاصل بأحدث التقنيات.",
+        image: "https://images.unsplash.com/photo-1530026186672-2cd00ffc50fe?w=800&q=80",
+        longDescription: "يضم القسم جراحين متخصصين في علاج آلام الظهر، المفاصل، والكسور المعقدة، مع توفر وحدة متكاملة للعلاج الطبيعي والتأهيل.",
+        icon: "syringe",
+        slug: "orthopedic-services"
+    }
 ];
 
 export default services;

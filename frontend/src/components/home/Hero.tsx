@@ -18,18 +18,18 @@ const Hero = () => {
         <div className="max-w-2xl">
           {/* Caption */}
           <h5 className="text-caption text-secondary uppercase tracking-widest mb-2">
-            Caring for Life
+           رعاية من أجل الحياة
           </h5>
           
           {/* Main Title - Display 1 */}
           <h1 className="text-display-1 text-primary mb-6 leading-tight">
-            Leading the Way <br />
-            in Medical Excellence
+           نحن نقود الطريق <br />
+  في التميز الطبي
           </h1>
 
           {/* Button - Text Button Style */}
           <button className="bg-accent text-primary px-8 py-3 rounded-full text-button font-medium hover:bg-primary hover:text-white transition duration-300 shadow-md">
-            Our Services
+            خدماتنا 
           </button>
         </div>
       </div>

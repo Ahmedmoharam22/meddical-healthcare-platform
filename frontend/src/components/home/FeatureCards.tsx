@@ -1,9 +1,9 @@
 import { Calendar, CreditCard, UserCheck } from 'lucide-react';
 
 const features = [
-  { title: 'Book an Appointment', icon: <Calendar />, bg: 'bg-primary' },
-  { title: 'Book an Appointment', icon: <UserCheck />, bg: 'bg-secondary' },
-  { title: 'Book an Appointment', icon: <CreditCard />, bg: 'bg-accent' },
+  { title: 'احجز موعدك', icon: <Calendar />, bg: 'bg-primary' },
+  { title: 'احجز موعدك', icon: <UserCheck />, bg: 'bg-secondary' },
+  { title: 'احجز موعدك', icon: <CreditCard />, bg: 'bg-accent' },
 ];
 
 const FeatureCards = () => {

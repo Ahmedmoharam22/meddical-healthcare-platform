@@ -1,70 +1,69 @@
 const services = [
     {
-        name: "Neurology",
-        description: "Specialized care for brain and nervous system disorders.",
+        name: "طب المخ والأعصاب",
+        description: "رعاية متخصصة لاضطرابات الدماغ والجهاز العصبي بأحدث التقنيات.",
         icon: "brain",
     },
     {
-        name: "Orthopedics",
-        description: "Specialized care for brain and nervous system disorders.",
+        name: "جراحة العظام",
+        description: "تشخيص وعلاج كسور العظام والمفاصل وإصابات العمود الفقري.",
         icon: "bone",
     },
     {
-        name: "Ophthalmology",
-        description: "Specialized care for brain and nervous system disorders.",
+        name: "طب وجراحة العيون",
+        description: "فحص شامل للنظر وعلاج أمراض الشبيكة والمياه البيضاء والزرقاء.",
         icon: "eye",
     },
     {
-        name: "Cardiovascular",
-        description: "Specialized care for brain and nervous system disorders.",
+        name: "أمراض القلب والأوعية",
+        description: "متابعة دقيقة لصحة القلب وضغط الدم وتنظيم ضربات القلب.",
         icon: "heart-beat",
     },
     {
-        name: "Gastroenterology",
-        description: "Specialized care for brain and nervous system disorders.",
+        name: "الجهاز الهضمي والكبد",
+        description: "علاج اضطرابات المعدة والقولون ومتابعة أمراض الكبد المزمنة.",
         icon: "stomach",
     },
     {
-        name: "Urology",
-        description: "Specialized care for brain and nervous system disorders.",
+        name: "جراحة المسالك البولية",
+        description: "علاج حصوات الكلى وأمراض الجهاز البولي للرجال والنساء.",
         icon: "heart-pulse",
     },
     {
-        name: "Bones",
-        description: "Specialized care for brain and nervous system disorders.",
+        name: "أمراض المفاصل والروماتيزم",
+        description: "علاج الالتهابات المفصلية وأمراض المناعة الذاتية المرتبطة بالعظام.",
         icon: "bone",
     },
     {
-        name: "Oncology",
-        description: "Specialized care for brain and nervous system disorders.",
+        name: "الأورام والسرطان",
+        description: "برامج متكاملة للكشف المبكر وعلاج الأورام بأحدث البروتوكولات.",
         icon: "cancer",
     },
     {
-        name: "Pulmonology",
-        description: "Specialized care for brain and nervous system disorders.",
+        name: "الأمراض الصدرية",
+        description: "علاج الربو، حساسية الصدر، واضطرابات التنفس المزمنة.",
         icon: "lungs",
     },
     {
-        name: "Dermatology",
-        description: "Specialized care for brain and nervous system disorders.",
+        name: "الجلدية والتجميل",
+        description: "علاج كافة الأمراض الجلدية وتوفير أحدث تقنيات الليزر والتجميل.",
         icon: "skin",
     },
     {
-        name: "Otorhinolaryngology",
-        description: "Specialized care for brain and nervous system disorders.",
+        name: "الأنف والأذن والحنجرة",
+        description: "علاج اضطرابات السمع، الجيوب الأنفية، ومشاكل الأحبال الصوتية.",
         icon: "ear",
     },
     {
-        name: "Renal Medicine",
-        description: "Specialized care for brain and nervous system disorders.",
+        name: "أمراض الكلى",
+        description: "متابعة وظائف الكلى وعلاج القصور الكلوي وضغط الدم المرتفع.",
         icon: "kidney",
     },
     {
-        name: "Gynaecology",
-        description: "Specialized care for brain and nervous system disorders.",
+        name: "أمراض النساء والتوليد",
+        description: "متابعة الحمل والولادة ورعاية صحة المرأة في كافة مراحلها العمرية.",
         icon: "uterus",
     }
-
 ];
 
 export default services;

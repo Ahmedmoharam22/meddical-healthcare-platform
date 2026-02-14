@@ -1,47 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap');
 @import "tailwindcss";
 
 @theme {
+  /* Colors */
   --color-primary: #1F2B6C;
   --color-secondary: #159EEC;
   --color-accent: #BFD2F8;
   --color-black: #212124;
   --color-white: #FFFFFF;
-  --font-display: "Outfit", sans-serif;
+--color-site-bg: #F4F7FA;
+  /* Font Family - Cairo is now the Master */
+  --font-cairo: "Cairo", sans-serif;
 
-  /* Fonts Family */
-  --font-yeseva: "Yeseva One", serif;
-  --font-work: "Work Sans", sans-serif;
-
-  /* Custom Typography Sizes & Styles */
+  /* Custom Typography Styles - All Switched to Cairo */
   --text-display-1: 48px;
-  --text-display-1--font-family: var(--font-yeseva);
+  --text-display-1--font-family: var(--font-cairo);
+  --text-display-1--font-weight: 700;
 
   --text-display-2: 32px;
-  --text-display-2--font-family: var(--font-yeseva);
+  --text-display-2--font-family: var(--font-cairo);
+  --text-display-2--font-weight: 700;
 
   --text-title: 26px;
-  --text-title--font-family: var(--font-work);
-  --text-title--font-weight: 500;
+  --text-title--font-family: var(--font-cairo);
+  --text-title--font-weight: 600;
 
   --text-caption: 18px;
-  --text-caption--font-family: var(--font-work);
+  --text-caption--font-family: var(--font-cairo);
   --text-caption--font-weight: 700;
 
   --text-body: 16px;
-  --text-body--font-family: var(--font-work);
+  --text-body--font-family: var(--font-cairo);
+  --text-body--font-weight: 400;
 
   --text-body-2: 18px;
-  --text-body-2--font-family: var(--font-work);
+  --text-body-2--font-family: var(--font-cairo);
+  --text-body-2--font-weight: 400;
 
   --text-button: 16px;
-  --text-button--font-family: var(--font-work);
-  --text-button--font-weight: 500;
+  --text-button--font-family: var(--font-cairo);
+  --text-button--font-weight: 600;
 
   --text-small: 14px;
-  --text-small--font-family: var(--font-work);
+  --text-small--font-family: var(--font-cairo);
 }
 
+/* Import Font & Set Global Style */
 
+:root {
+  font-family: var(--font-cairo);
+}
+/* تطبيق اللون على الـ body بشكل عام */
 body {
-  font-family: var(--font-display);
+  background-color: var(--color-site-bg);
+  color: var(--color-primary); /* يفضل نخلي الكلام الأساسي بلونك الأساسي */
+  margin: 0;
+  padding: 0;
 }

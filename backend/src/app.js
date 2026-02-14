@@ -7,10 +7,16 @@ import serviceRoutes from './routes/serviceRoutes.js';
 import appointmentRoutes from './routes/appointmentRoutes.js';
 import blogRoutes from './routes/blogRoutes.js';
 import specialtyRoutes from './routes/specialtyRoutes.js';
+import messageRoutes from './routes/messageRoutes.js';
+import userRoutes from './routes/userRoutes.js';
+import statsRoutes from './routes/statsRoutes.js';
+import aiRoutes from './routes/aiRoutes.js';
+import diagnosticRoutes from './routes/diagnosticRoutes.js';
 
 dotenv.config();
 
 const app = express();
+app.use('/uploads', express.static('uploads'));
 
 app.use(express.json());
 app.use(cors());
@@ -24,6 +30,11 @@ app.use('/api/services', serviceRoutes);
 app.use('/api/appointments', appointmentRoutes);
 app.use('/api/blogs', blogRoutes);
 app.use('/api/specialties', specialtyRoutes);
+app.use('/api/messages', messageRoutes);
+app.use('/api/users', userRoutes);
+app.use('/api/stats', statsRoutes);
+app.use('/api/ai', aiRoutes);
+app.use('/api/diagnostics', diagnosticRoutes);
 
 
 export default app;

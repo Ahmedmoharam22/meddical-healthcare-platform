@@ -9,11 +9,10 @@ const serviceSchema = mongoose.Schema({
         type: String, 
         required: [true, 'Please add a description'] 
     },
-    image: { 
-        type: String, 
-        required: [true, 'Please add a service image URL'] 
+    longDescription: { type: String }, // تفاصيل أكتر لصفحة الـ Single Service
+    image: {
+        type: String
     },
-    // الـ icon ممكن نسيبه لو محتاجينه في مكان تاني زي الـ Navbar أو Footer
     icon: { 
         type: String 
     },

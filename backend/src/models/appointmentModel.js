@@ -13,10 +13,10 @@ const appointmentSchema = mongoose.Schema({
     },
     
     // ربط الحجز بخدمة/قسم معين
-    service: {
-        type: mongoose.Schema.Types.ObjectId,
-        required: true,
-        ref: 'Service'
+    Specialty: {
+type: mongoose.Schema.Types.ObjectId,
+       required: true,
+        ref: 'Specialty'
     },
     
     appointmentDate: { type: Date, required: true },
