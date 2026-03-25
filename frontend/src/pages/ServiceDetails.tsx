@@ -3,6 +3,7 @@ import { useSingleService } from '../hooks/useSingleService';
 import { useServices } from '../hooks/useServices';
 import { CheckCircle, PhoneCall, FileText, ArrowLeft, HeartPulse, Clock, ShieldCheck, UserCheck } from 'lucide-react';
 import Loading from '../components/common/Loading';
+import SEO from '../components/SEO';
 
 const ServiceDetails = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -21,6 +22,11 @@ const ServiceDetails = () => {
 
   return (
     <div className="bg-gray-50 font-cairo" dir="rtl">
+      <SEO
+        title={`${service.name} - مجمع النور الطبي`}
+        description={service.description}
+        keywords={`${service.name}, مجمع النور الطبي, طب, صحة, خدمات طبية`}
+      />
       {/* 1. Hero Header Section */}
       <section className="relative h-[400px] flex items-center justify-center overflow-hidden">
         {/* الخلفية مع Overlay */}

@@ -2,6 +2,7 @@ import * as Icons from 'lucide-react';
 import { useServices } from '../hooks/useServices';
 import Loading from '../components/common/Loading';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 
 const Services = () => {
   const { services, isLoading } = useServices();
@@ -9,7 +10,12 @@ const Services = () => {
   if (isLoading) return <Loading />;
 
   return (
-    <div className="font-cairo bg-[#F8FAFC]">
+    <div className="font-cairo bg-site-bg">
+      <SEO
+        title="خدمات مجمع النور الطبي - رعاية صحية متكاملة"
+        description="اكتشف خدمات مجمع النور الطبي الشاملة في المحمودية، من العيادات المتخصصة إلى الأجهزة الحديثة والخدمات الطبية المتميزة."
+        keywords="خدمات طبية، مجمع النور الطبي، عيادات، أطباء، صحة، محمودية، خدمات خيرية"
+      />
       <section className="bg-primary pt-32 pb-20 relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
           <h1 className="text-display-3 md:text-display-2 text-white font-black mb-6 uppercase tracking-tighter">

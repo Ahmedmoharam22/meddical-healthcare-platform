@@ -3,6 +3,7 @@ import { Search, Calendar, User, ArrowLeft, Tag, BookOpen } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useBlogs } from '../hooks/useBlogs'; 
 import Loading from '../components/common/Loading';
+import SEO from '../components/SEO';
 
 const categories = ["الكل", "نصائح طبية", "جراحة", "تغذية", "أخبار المجمع"];
 
@@ -22,6 +23,11 @@ const BlogPage = () => {
 
   return (
     <div className="font-cairo min-h-screen pb-20 bg-site-bg">
+      <SEO
+        title="مدونة مجمع النور الطبي - نصائح طبية وآخر أخبار المجمع"
+        description="تابع أحدث المقالات الطبية والنصائح الصحية من أطباء مجمع النور، بالإضافة إلى أخبار المبادرات والفعاليات المجتمعية."
+        keywords="مدونة طبية، نصائح صحية، أخبار مجمع النور، طب، صحة، مقالات طبية، توعية صحية"
+      />
       {/* 1. Header Section */}
       <section className="bg-primary pt-32 pb-24 relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10 text-center">
@@ -75,7 +81,7 @@ const BlogPage = () => {
               <article key={post._id} className="group bg-white rounded-[40px] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100 flex flex-col">
                 <div className="relative h-64 overflow-hidden">
                   <img 
-                    src={post.image || '/assets/blog-placeholder.jpg'} 
+                    src={`http://localhost:5000/uploads/${post.image}`} 
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
                     alt={post.title} 
                   />
@@ -105,7 +111,7 @@ const BlogPage = () => {
                   </p>
 
                   <Link 
-                    to={`/blog/${post.slug || post._id}`} 
+                    to={`/blogs/${post.slug || post._id}`} 
                     className="mt-auto flex items-center gap-2 text-primary font-black group/link"
                   >
                     اقرأ المزيد 

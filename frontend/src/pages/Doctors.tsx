@@ -4,6 +4,7 @@ import { useSpecialties } from '../hooks/useSpecialties';
 import { Search, Filter, Calendar, Clock, Award, Stethoscope } from 'lucide-react';
 import Loading from '../components/common/Loading';
 import DoctorModal from '../components/common/DoctorModal';
+import SEO from '../components/SEO';
 
 const DoctorsPage = () => {
   const { data: doctors, isLoading: docsLoading } = useDoctors();
@@ -25,6 +26,11 @@ const DoctorsPage = () => {
 
   return (
     <div className="font-cairo bg-[#F8FAFC] min-h-screen pb-20">
+      <SEO
+      title="أطباء مجمع النور الطبي - نخبة الاستشاريين والأخصائيين"
+      description="تعرف على نخبة أطباء مجمع النور الطبي، استشاريين وأخصائيين في مختلف التخصصات، واحجز موعدك اليوم."
+      keywords="أطباء، استشاريين، أخصائيين، مجمع النور الطبي، طب، صحة، عيادات، تخصصات"
+      />
       {/* 1. Hero Section */}
       <section className="bg-primary pt-32 pb-20 text-white relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10 text-center">

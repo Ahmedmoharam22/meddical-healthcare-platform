@@ -3,6 +3,7 @@ import { useBlogs } from '../../hooks/useBlogs';
 import Loading from '../common/Loading';
 import { format } from 'date-fns';
 import { ar } from 'date-fns/locale';
+import { Link } from 'react-router-dom';
 
 const News = () => {
   const { data: blogs, isLoading } = useBlogs();
@@ -32,7 +33,7 @@ const News = () => {
             <div className="lg:col-span-7 group cursor-pointer">
               <div className="relative h-[450px] overflow-hidden rounded-[40px] mb-6 shadow-md">
                 <img 
-                  src={blogs[0].image} 
+                  src={`http://localhost:5000/uploads/${blogs[0].image}`} 
                   alt={blogs[0].title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
@@ -59,9 +60,9 @@ const News = () => {
               <p className="text-gray-600 leading-relaxed line-clamp-2 mb-6">
                 {blogs[0].content}
               </p>
-              <button className="text-primary font-black flex items-center gap-2 cursor-pointer hover:text-secondary transition-colors">
+              <Link to={`/blogs/${blogs[0].slug}`} className="text-primary font-black flex items-center gap-2 cursor-pointer hover:text-secondary transition-colors">
                 اقرأ المقال كاملاً <ArrowRight size={18} />
-              </button>
+              </Link>
             </div>
           )}
 
@@ -71,7 +72,7 @@ const News = () => {
               <div key={blog._id} className="group flex gap-5 cursor-pointer items-start p-2 rounded-[24px] hover:bg-gray-50 transition-colors">
                 <div className="w-28 h-28 flex-shrink-0 overflow-hidden rounded-2xl shadow-sm">
                   <img 
-                    src={blog.image} 
+                    src={`http://localhost:5000/uploads/${blog.image}`} 
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
                     alt={blog.title} 
                   />

@@ -84,3 +84,13 @@ export interface BodyPartData {
     name: string;
   };
 }
+export interface MedicineProps {
+  medicine: {
+    name: string;
+    image: string;
+    stock: number;
+    price: number;
+    expiryDate: string;
+    category: string;
+  };
+}

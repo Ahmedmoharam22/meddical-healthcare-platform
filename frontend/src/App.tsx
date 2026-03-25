@@ -22,12 +22,17 @@ import ManageMessages from './pages/admin/ManageMessages';
 import Analytics from './pages/dashboard/Analytics';
 import InteractiveBody from './components/InteractiveBody';
 import ManageServices from './pages/admin/ManageServices';
+import ScrollToTop from './components/common/ScrollToTop';
+import NotFound from './pages/NotFound';
+import BookAppointment from './pages/BookAppointment';
+import Inventory from './pages/admin/Inventory';
 
 function App() {
   return (
    
 
 <Router>
+<ScrollToTop />
   <Routes>
     {/* 1. روابط المستخدم العادي (MainLayout) */}
     <Route element={<MainLayout />}>
@@ -43,6 +48,8 @@ function App() {
       <Route path="/contact" element={<Contact />} />
       <Route path="/login" element={<Login />} />
       <Route path="/diagnose" element={<InteractiveBody />} />
+      <Route path="*" element={<NotFound />} />
+      <Route path="/appointment" element={<BookAppointment />} />
     </Route>
 
     {/* 2. روابط الإدارة المحمية (AdminLayout) */}
@@ -67,6 +74,8 @@ function App() {
         <Route path="stats" element={<Analytics />} />
         {/* {ManageServices} */}
         <Route path="services" element={<ManageServices />} />
+        <Route path="inventory" element={<Inventory />} />
+     
       </Route>
     </Route>
 

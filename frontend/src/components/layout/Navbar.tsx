@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Search, Clock, PhoneCall, MapPin, Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
+import Logo from "../common/Logo";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,7 +24,7 @@ const Navbar = () => {
         <div className="container mx-auto px-4 flex items-center justify-between">
           {/* اللوجو */}
           <Link to="/" className="text-3xl text-primary font-black tracking-tighter">
-            مجمع<span className="text-secondary font-serif"> النور</span>
+         <Logo showText={true} textColor="text-primary"  />
           </Link>
 
           {/* معلومات التواصل - مخفية تحت الـ 1024px */}

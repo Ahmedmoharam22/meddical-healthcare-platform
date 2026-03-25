@@ -7,10 +7,16 @@ import Appointment from '../components/home/Appointment';
 import Doctors from '../components/home/Doctors';
 import Blogs from '../components/home/Blogs';
 import Contact from '../components/home/Contact';
+import SEO from '../components/SEO';
 
 const Home = () => {
   return (
     <>
+    <SEO
+        title="مجمع النور الطبي - رعاية شاملة بجودة عالية"
+        description="مجمع النور الطبي يقدم خدمات طبية متكاملة في المحمودية. أطباء متخصصون، أحدث الأجهزة، ورعاية إنسانية بأسعار مخفضة."
+        keywords="مجمع النور الطبي، طب، صحة، محمودية، عيادات، أطباء، خدمات طبية، رعاية صحية"
+      />
       <Hero />
       <FeatureCards />
       <Welcome />

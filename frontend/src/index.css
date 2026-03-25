@@ -57,3 +57,24 @@ body {
   margin: 0;
   padding: 0;
 }
+
+/* تخصيص السكرول بار للموقع كله */
+@layer base {
+  ::-webkit-scrollbar {
+    width: 8px; /* عرض السكرول */
+    height: 8px; /* ارتفاع السكرول الأفقي */
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0f172a; /* نفس لون الخلفية الكحلي بتاع الداشبورد (Primary) */
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #159EEC; /* لون الـ Accent بتاعنا (الأصفر/الذهبي مثلاً) */
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #f59e0b; /* درجة أغمق شوية لما تقف عليه */
+  }
+}

@@ -2,6 +2,7 @@ import * as Icons from 'lucide-react';
 import { useSpecialties } from '../hooks/useSpecialties';
 import Loading from '../components/common/Loading';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 
 const Specialties = () => {
   const { data: specialties, isLoading } = useSpecialties();
@@ -9,7 +10,12 @@ const Specialties = () => {
   if (isLoading) return <Loading />;
 
   return (
-    <div className="font-cairo bg-[#F8FAFC]">
+    <div className="font-cairo bg-site-bg">
+      <SEO
+        title="تخصصات مجمع النور الطبي - قصة صرح خيري في المحمودية"
+        description="تعرف على قصة مجمع النور الطبي، من فكرة بسيطة إلى واقع يخدم أهالي المحمودية وميت فارس وعرب شراويد. مبادرة خيرية بخبرات طبية متكاملة."
+        keywords="مجمع النور الطبي، المحمودية، ميت فارس، عرب شراويد، خدمات طبية، تخصصات طبية، مبادرة خيرية، صحة، طب"
+      />
       {/* Hero Section - واجهة تليق بصرح المحمودية الطبي */}
       <section className="bg-primary pt-32 pb-20 relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">

@@ -6,6 +6,7 @@ import { Phone, MapPin, Clock, Send, MessageSquare, User, Smartphone, Mail, Aler
 import { useSendMessage } from '../hooks/useMessages';
 import { contactSchema, type ContactInput } from '../utils/validations';
 import SectionHeader from '../components/common/SectionHeader';
+import SEO from '../components/SEO';
 
 const ContactPage = () => {
   const { mutate, isPending } = useSendMessage();
@@ -31,7 +32,11 @@ const ContactPage = () => {
   return (
     <div className="font-cairo bg-site-bg min-h-screen pb-20">
       {/* 1. Hero Section */}
-     
+     <SEO
+        title="تواصل معنا - مجمع النور الطبي"
+        description="تواصل مع مجمع النور الطبي، احجز موعدك، أو أرسل استفساراتك لفريقنا الطبي المتخصص."
+        keywords="تواصل معنا، حجز موعد، استفسارات طبية، مجمع النور الطبي، دعم فني"
+      />
       <section className="bg-primary pt-32 pb-24 relative overflow-hidden text-center">
         <div className="container mx-auto px-4 relative z-10">
           <h1 className="text-4xl md:text-6xl font-black text-white mb-6">تواصل معنا</h1>

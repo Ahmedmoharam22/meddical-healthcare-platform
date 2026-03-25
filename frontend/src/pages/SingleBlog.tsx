@@ -4,6 +4,7 @@ import { useSingleBlog } from '../hooks/useBlogs';
 import { Calendar, User, ArrowRight, Share2, Clock, ChevronLeft, Layout } from 'lucide-react';
 import Loading from '../components/common/Loading';
 import { API_URL } from '../api/axiosInstance';
+import SEO from '../components/SEO';
 
 
 const SingleBlog = () => {
@@ -24,10 +25,15 @@ const SingleBlog = () => {
 
   return (
     <div className="font-cairo bg-[#FBFBFE] min-h-screen pb-20" dir="rtl">
+      <SEO
+        title={`${post.title} - مجمع النور الطبي`}
+        description={post.subTitle || post.content.substring(0, 100)}
+        keywords={`${post.category}, مجمع النور الطبي, طب, صحة, مقالات طبية`}
+      />
       {/* 1. Header Section */}
       <header className="pt-32 pb-10 bg-white border-b border-gray-50">
         <div className="container mx-auto px-4">
-          <Link to="/blog" className="inline-flex items-center gap-2 text-secondary font-bold mb-8 group">
+          <Link to="/blogs" className="inline-flex items-center gap-2 text-secondary font-bold mb-8 group">
             <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" /> العودة للمدونة
           </Link>
           
@@ -72,7 +78,7 @@ const SingleBlog = () => {
               {/* تصليح مسار الصورة هنا */}
               <div className="h-[400px] md:h-[550px] w-full">
                 <img 
-                  src={post.image?.startsWith('http') ? post.image : `${API_URL}${post.image}`} 
+                  src={post.image?.startsWith('http') ? post.image : `${API_URL}/uploads/${post.image}`} 
                   className="w-full h-full object-cover" 
                   alt={post.title} 
                 />

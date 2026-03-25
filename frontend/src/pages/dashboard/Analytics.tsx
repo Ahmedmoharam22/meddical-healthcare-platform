@@ -2,6 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, LineChart, Line } from 'recharts';
 import { transformSpecialtyData, transformStatusData } from '../../utils/chartTransformers';
 import axiosInstance from '../../api/axiosInstance';
+import SEO from '../../components/SEO';
 
 const Analytics = () => {
   const { data, isLoading } = useQuery({
@@ -16,6 +17,11 @@ const Analytics = () => {
 
   return (
     <div className="p-6 space-y-8" dir="rtl">
+      <SEO
+        title="تحليلات مجمع النور الطبي - إحصائيات ولوحات ذكية"
+        description="تحليلات شاملة لأداء مجمع النور الطبي، إحصائيات الحجوزات، التخصصات الأكثر طلباً، ومعدلات الخدمة."
+        keywords="تحليلات طبية، إحصائيات، مجمع النور الطبي، لوحة تحكم، صحة، خدمات طبية"
+      />
       <h1 className="text-3xl font-black text-primary">لوحة التحليلات الذكية</h1>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">

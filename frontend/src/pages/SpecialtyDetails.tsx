@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom';
 import { useDoctorsBySpecialty } from '../hooks/useDoctors';
 import { Calendar, Clock, ChevronRight, Stethoscope, AlertCircle } from 'lucide-react';
 import Loading from '../components/common/Loading';
+import SEO from '../components/SEO';
 
 const SpecialtyDetails = () => {
   const { slug } = useParams(); // بناخد الـ slug من الـ URL
@@ -16,6 +17,11 @@ const SpecialtyDetails = () => {
 
   return (
     <div className="min-h-screen bg-[#F8FAFC] font-cairo pb-20">
+      <SEO
+        title={`${specialtyName} - مجمع النور الطبي`}
+        description={`أطباء قسم ${specialtyName} في مجمع النور الطبي، تعرف على خبراتهم وجداول العيادات.`}
+        keywords={`${specialtyName}, مجمع النور الطبي, أطباء, عيادات, صحة, محمودية`}
+      />
       {/* Header Section */}
       <div className="bg-primary pt-32 pb-20 relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">

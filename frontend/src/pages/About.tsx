@@ -1,9 +1,15 @@
 import React from 'react';
 import { Heart, Users, Target, Calendar, MapPin, Award } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const About = () => {
   return (
     <div className="font-cairo">
+      <SEO
+        title="عن مجمع النور الطبي - قصة صرح خيري في المحمودية"
+        description="تعرف على قصة مجمع النور الطبي، من فكرة بسيطة إلى واقع يخدم أهالي المحمودية وميت فارس وعرب شراويد. مبادرة خيرية بخبرات طبية متكاملة."
+        keywords="مجمع النور الطبي، المحمودية، ميت فارس، عرب شراويد، مبادرة خيرية، طب، صحة، أطباء متطوعين"
+      />
       {/* 1. Hero Section: عنوان الصفحة */}
       <section className="relative py-24 bg-primary overflow-hidden">
         <div className="absolute inset-0 opacity-10">

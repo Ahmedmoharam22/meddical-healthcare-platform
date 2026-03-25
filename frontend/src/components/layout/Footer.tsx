@@ -1,5 +1,6 @@
 import React from 'react';
 import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin, ArrowRight, Heart } from 'lucide-react';
+import Logo from '../common/Logo';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -35,7 +36,7 @@ const Footer = () => {
           
           {/* Column 1: Brand Info */}
           <div className="space-y-6">
-            <h2 className="text-3xl font-black tracking-tighter">مجمع النور الطبي<span className="text-secondary">.</span></h2>
+            <Logo showText={true} textColor="text-white"  />
             <p className="text-white/70 leading-relaxed">
               مجمع النور الطبي، نهتم بصحتكم ونقدم أفضل الخدمات الطبية بأحدث التقنيات العالمية وتحت إشراف نخبة من الخبراء.
             </p>
@@ -74,7 +75,7 @@ const Footer = () => {
             <ul className="space-y-6">
               <li className="flex gap-4">
                 <div className="text-secondary"><MapPin size={20} /></div>
-                <span className="text-white/70">المنصورة، المشاية السفلية، مجمع النور الطبي</span>
+                <span className="text-white/70">المحموديه، الدقهليه، مجمع النور الطبي</span>
               </li>
               <li className="flex gap-4">
                 <div className="text-secondary"><Phone size={20} /></div>
