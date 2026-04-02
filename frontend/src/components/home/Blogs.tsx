@@ -60,7 +60,7 @@ const News = () => {
               <p className="text-gray-600 leading-relaxed line-clamp-2 mb-6">
                 {blogs[0].content}
               </p>
-              <Link to={`/blogs/${blogs[0].slug}`} className="text-primary font-black flex items-center gap-2 cursor-pointer hover:text-secondary transition-colors">
+              <Link to={`/blog/${blogs[0]._id}`} className="text-primary font-black flex items-center gap-2 cursor-pointer hover:text-secondary transition-colors">
                 اقرأ المقال كاملاً <ArrowRight size={18} />
               </Link>
             </div>

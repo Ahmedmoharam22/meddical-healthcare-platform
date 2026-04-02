@@ -24,6 +24,7 @@ const AdminLayout = () => {
     { name: 'رسائل المرضى', path: '/admin/messages', icon: <MessageSquare size={20} /> },
     { name: 'إحصائيات المركز', path: '/admin/stats', icon: <BarChart3 size={20} /> },
     { name: 'المخزن', path: '/admin/inventory', icon: <Package size={20} /> },
+    { name: 'إضافة مدير', path: '/register-admin', icon: <User size={20} /> },
   ];
 
   const SidebarContent = () => (

@@ -11,7 +11,7 @@ import Blog from './pages/Blog';
 import SingleBlog from './pages/SingleBlog';
 import Contact from './pages/Contact';
 import ProtectedRoute from './admin/ProtectedRoute';
-import Login from './pages/admin/Login';
+import Login from './pages/auth/Login';
 import AdminLayout from './components/layout/AdminLayout';
 import DashboardOverview from './pages/admin/dashboard';
 import ManageDoctors from './pages/admin/ManageDoctors';
@@ -26,6 +26,8 @@ import ScrollToTop from './components/common/ScrollToTop';
 import NotFound from './pages/NotFound';
 import BookAppointment from './pages/BookAppointment';
 import Inventory from './pages/admin/Inventory';
+import RegisterAdmin from './pages/auth/RegisterAdmin';
+import PharmacyInventory from './pages/PharmacyInventory';
 
 function App() {
   return (
@@ -44,12 +46,14 @@ function App() {
       <Route path="/specialties/:slug" element={<SpecialtyDetails />} />
       <Route path="/doctors" element={<Doctors />} />
       <Route path="/blogs" element={<Blog />} />
-      <Route path="/blog/:slug" element={<SingleBlog />} />
+      <Route path="/blog/:id" element={<SingleBlog />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/register-admin" element={<RegisterAdmin />} />
       <Route path="/diagnose" element={<InteractiveBody />} />
       <Route path="*" element={<NotFound />} />
       <Route path="/appointment" element={<BookAppointment />} />
+      <Route path="/pharmacy" element={<PharmacyInventory />} />
     </Route>
 
     {/* 2. روابط الإدارة المحمية (AdminLayout) */}

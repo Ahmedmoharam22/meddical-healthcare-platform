@@ -111,7 +111,7 @@ const BlogPage = () => {
                   </p>
 
                   <Link 
-                    to={`/blogs/${post.slug || post._id}`} 
+                    to={`/blog/${post._id}`} 
                     className="mt-auto flex items-center gap-2 text-primary font-black group/link"
                   >
                     اقرأ المزيد 

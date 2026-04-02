@@ -13,7 +13,7 @@ import statsRoutes from './routes/statsRoutes.js';
 import aiRoutes from './routes/aiRoutes.js';
 import diagnosticRoutes from './routes/diagnosticRoutes.js';
 import medicineRoutes from './routes/medicineRoutes.js';
-dotenv.config();
+dotenv.config();    
 
 const app = express();
 app.use('/uploads', express.static('uploads'));

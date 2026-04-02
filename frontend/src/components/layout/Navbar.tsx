@@ -15,6 +15,7 @@ const Navbar = () => {
     { name: "المقالات", path: "/blogs" },
     { name: "تواصل معنا", path: "/contact" },
     { name: "شخّص حالتك", path: "/diagnose" },
+    { name: "الصيدلية", path: "/pharmacy" },
   ];
 
   return (

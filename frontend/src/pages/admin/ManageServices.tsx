@@ -54,7 +54,7 @@ const ServicesManager = () => {
                 <h1 className="text-2xl font-black text-slate-800">إدارة الخدمات</h1>
                 <button 
                     onClick={() => { setIsEditMode(false); reset(); setIsFormModalOpen(true); }}
-                    className="bg-blue-600 text-white px-6 py-3 rounded-xl font-bold flex items-center gap-2"
+                    className="bg-secondary text-white cursor-pointer px-6 py-3 rounded-xl font-bold flex items-center gap-2"
                 >
                     <Plus size={18} /> إضافة خدمة
                 </button>
@@ -79,7 +79,7 @@ const ServicesManager = () => {
                                         onClick={() => { setSelectedService(service); setIsDeleteModalOpen(true); }} 
                                         className="p-2 cursor-pointer text-red-500 hover:bg-red-50 rounded-lg"
                                     >
-                                        <Trash2 size={18} />
+                                        <Trash2  size={18} />
                                     </button>
                                 </td>
                             </tr>
@@ -107,7 +107,7 @@ const ServicesManager = () => {
                                 <textarea {...register('description')} className="w-full p-4 bg-slate-50 rounded-xl outline-none focus:ring-2 focus:ring-blue-500 h-28" />
                                 {errors.description && <p className="text-red-500 text-xs mt-1">{errors.description.message}</p>}
                             </div>
-                            <button disabled={isCreating || isUpdating} className="w-full bg-blue-600 text-white py-4 rounded-xl font-black">
+                            <button  disabled={isCreating || isUpdating} className="w-full bg-blue-600 cursor-pointer text-white py-4 rounded-xl font-black">
                                 {isCreating || isUpdating ? <Loader2 className="animate-spin mx-auto" /> : 'حفظ'}
                             </button>
                         </form>

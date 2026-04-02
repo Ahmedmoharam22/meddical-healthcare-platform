@@ -6,6 +6,7 @@ import {
 import { useMedicines } from '../../hooks/useMedicines';
 import MedicineCard from '../../components/pharmacy/MedicineCard';
 import AddMedicineModal from '../../components/pharmacy/AddMedicineModal';
+import ConfirmModal from '../../components/shared/ConfirmModal';
 
 const Inventory = () => {
   // 1. States المنطقية
@@ -13,6 +14,8 @@ const Inventory = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [filterCategory, setFilterCategory] = useState("All");
 
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+  const [selectedService, setSelectedService] = useState<any>(null);
   // 2. جلب البيانات باستخدام React Query Hook اللي عملناه
   const { medicinesQuery, deleteMutation } = useMedicines();
   const { data: medicines, isLoading, isError, refetch } = medicinesQuery;
@@ -56,7 +59,7 @@ const Inventory = () => {
           </button>
           <button 
             onClick={() => setIsModalOpen(true)}
-            className="flex-grow lg:flex-grow-0 cursor-pointer bg-primary text-white px-8 py-4 rounded-2xl font-black flex items-center justify-center gap-3 shadow-xl shadow-primary/20 hover:bg-secondary/80 hover:text-white active:scale-95 transition-all"
+            className="flex-grow lg:flex-grow-0 cursor-pointer bg-secondary text-white px-8 py-4 rounded-2xl font-black flex items-center justify-center gap-3 shadow-xl shadow-primary/20 hover:bg-secondary/80 hover:text-white active:scale-95 transition-all"
           >
             <Plus size={22} />
             إضافة صنف جديد
@@ -106,8 +109,11 @@ const Inventory = () => {
                {/* زرار حذف سريع "للسينيورز" فقط */}
                <div className="absolute top-6 left-6 flex gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
                   <button 
-                    onClick={() => { if(confirm('هل أنت متأكد من حذف هذا الصنف نهائياً؟')) deleteMutation.mutate(med._id) }}
-                    className="bg-red-500/90 backdrop-blur-md text-white p-2.5 rounded-xl shadow-lg hover:bg-red-600 transition-colors"
+                  onClick={() => {
+                    setSelectedService(med);
+                    setIsDeleteModalOpen(true);
+                  }}
+                className="bg-red-500/90 cursor-pointer backdrop-blur-md text-white p-2.5 rounded-xl shadow-lg hover:bg-red-600 transition-colors"
                   >
                     حذف
                   </button>
@@ -129,6 +135,17 @@ const Inventory = () => {
       <AddMedicineModal 
         isOpen={isModalOpen} 
         onClose={() => setIsModalOpen(false)} 
+      />
+      <ConfirmModal
+        isOpen={isDeleteModalOpen}
+        onClose={() => setIsDeleteModalOpen(false)}
+        onConfirm={() => {
+          if (selectedService) {
+            deleteMutation.mutate(selectedService._id);
+          }
+        }}
+        title="تأكيد الحذف"
+        message={`هل أنت متأكد من حذف خدمة "${selectedService?.name}"؟`}
       />
       
     </div>

@@ -78,7 +78,7 @@ const SingleBlog = () => {
               {/* تصليح مسار الصورة هنا */}
               <div className="h-[400px] md:h-[550px] w-full">
                 <img 
-                  src={post.image?.startsWith('http') ? post.image : `${API_URL}/uploads/${post.image}`} 
+                  src={post.image?.startsWith('http') ? post.image : `http://localhost:5000/uploads/${post.image}`} 
                   className="w-full h-full object-cover" 
                   alt={post.title} 
                 />

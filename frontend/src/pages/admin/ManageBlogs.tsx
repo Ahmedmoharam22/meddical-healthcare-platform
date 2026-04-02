@@ -69,7 +69,7 @@ const ManageBlogs = () => {
           <div key={blog._id} className="bg-white rounded-[40px] overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all group relative">
             {/* Image Section */}
             <div className="h-56 relative overflow-hidden">
-              <img src={`http://localhost:5000${blog.image}`} alt={blog.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+              <img src={`http://localhost:5000/uploads/${blog.image}`} alt={blog.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
               <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-4 py-1.5 rounded-full text-secondary font-black text-xs shadow-sm">
                 {blog.category}
               </div>

@@ -142,14 +142,14 @@ const AddMedicineModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () =>
              <button 
                type="button" 
                onClick={onClose}
-               className="flex-1 py-4 rounded-2xl font-bold text-gray-400 hover:bg-gray-100 transition-all"
+               className="flex-1 cursor-pointer py-4 rounded-2xl font-bold text-gray-400 hover:bg-gray-100 transition-all"
              >
                إلغاء
              </button>
              <button 
                 type="submit"
                 disabled={addMutation.isPending}
-                className="flex-[2] bg-primary text-white font-black py-4 rounded-2xl shadow-xl shadow-primary/20 hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-2 disabled:bg-gray-300"
+                className="flex-[2] cursor-pointer bg-primary text-white font-black py-4 rounded-2xl shadow-xl shadow-primary/20 hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-2 disabled:bg-gray-300"
               >
                 {addMutation.isPending ? <Loader2 className="animate-spin" /> : "إضافة الصنف للمخزون"}
               </button>
