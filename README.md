@@ -8,28 +8,26 @@
 
 ---
 
-## 🌟 نظرة عامة (Project Overview)
-مشروع "مجمع النور" هو منصة Full-Stack تهدف لرقمنة الخدمات الطبية. يتيح للمرضى استعراض الخدمات الطبية المتاحة، التعرف على الأطباء، وحجز المواعيد، بينما يوفر للأدمن (الإدارة) لوحة تحكم كاملة لإدارة المحتوى والخدمات بشكل لحظي.
+## 🏥 Al-Noor Medical Complex (Healthcare ERP)
 
-## 🚀 المميزات التقنية (Key Features)
+An advanced medical management platform designed for high-efficiency clinics and hospitals. 
 
-- **🔐 نظام إدارة الصلاحيات (Admin Dashboard):** لوحة تحكم محمية تسمح بإضافة وتعديل وحذف الخدمات الطبية (Full CRUD).
-- **📱 تصميم متجاوب (Fully Responsive):** واجهة مستخدم متطورة تعمل بكفاءة على جميع الشاشات (Mobile, Tablet, Desktop).
-- **⚡ إدارة الحالة (Server-State Management):** استخدام **React Query** لعمل Caching للبيانات وتقليل طلبات الـ API، مما يوفر سرعة فائقة.
-- **🛡️ التحقق من البيانات (Advanced Validation):** ربط **React Hook Form** بـ **Zod** لضمان دقة البيانات المدخلة قبل إرسالها للباك إند.
-- **🔗 روابط ديناميكية (Dynamic Routing):** نظام Slugs احترافي لصفحات الخدمات والأطباء متوافق مع محركات البحث (SEO Friendly).
-- **🎨 تجربة مستخدم عصرية (Modern UI/UX):** استخدام Tailwind CSS مع Lucide Icons لإنشاء واجهة طبية مريحة وعصرية.
+### 🚀 Core Features:
+- **Smart Pharmacy & Logistics:** Real-time inventory tracking with Barcode support and low-stock AI alerts.
+- **Advanced Auth:** Multi-role access control with secure administrative "Secret Key" registration.
+- **Medical Insights:** Dynamic dashboard for tracking medicine expiration and essential medical assets.
+- **Modern UI:** Premium medical-grade design using Tailwind CSS and Lucide-icons.
 
-## 🛠️ تقنيات المشروع (Tech Stack)
-
+### 🛠️ Tech Stack:
 - **Frontend:** React.js (Vite) & TypeScript.
+- **Backend:** Node.js, Express.js, MongoDB (Mongoose).
 - **State Management:** TanStack Query (React Query).
 - **Forms:** React Hook Form & Zod Validation.
 - **Styling:** Tailwind CSS & Framer Motion (Transitions).
 - **Icons:** Lucide React.
 - **HTTP Client:** Axios (With Interceptors for Auth).
 
-## 📁 هيكلة المشروع (Project Structure)
+## 📁 (Project Structure)
 
 ```text
 src/
