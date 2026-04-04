@@ -4,6 +4,7 @@ import { useDoctors } from '../../hooks/useDoctors';
 import Loading from '../common/Loading';
 import { Link } from 'react-router-dom';
 import DoctorModal from '../common/DoctorModal';
+import SectionHeader from '../common/SectionHeader';
 
 const Doctors = () => {
   const { data: doctors, isLoading } = useDoctors();
@@ -17,16 +18,12 @@ const Doctors = () => {
         
         {/* Header السيكشن */}
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-          <div className="max-w-2xl">
-            <h4 className="text-secondary font-bold tracking-widest uppercase text-sm mb-3">نخبة الخبراء</h4>
-            <h2 className="text-display-2 text-primary font-bold">تعرف على أفضل أطباء مجمع النور</h2>
-            <div className="w-20 h-1.5 bg-accent mt-4 rounded-full"></div>
-          </div>
+          <SectionHeader subtitle="نخبة الخبراء" title="تعرف على أفضل أطباء مجمع النور" className="mb-0 text-right" />
           
           {/* رابط يودي لصفحة الدكاترة الكبيرة */}
           <Link 
             to="/doctors" 
-            className="bg-white text-primary border-2 border-primary/10 px-8 py-3 rounded-full font-bold hover:bg-primary hover:text-white transition-all duration-300 flex items-center gap-2 shadow-sm"
+            className="bg-white text-primary border-2 border-primary/10 px-8 py-3 rounded-full font-bold hover:bg-secondary hover:text-white transition-all duration-300 flex items-center gap-2 shadow-sm"
           >
             عرض كل الأطباء <ArrowLeft size={18} />
           </Link>

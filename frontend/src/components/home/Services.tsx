@@ -20,8 +20,7 @@ import Loading from "../common/Loading";
 
 
 const Services = () => {
-  const { data: services, isLoading } = useServices();
-
+const { services, isLoading } = useServices();
   // ماب للأيقونات (نفس اللي عندك)
   const iconMap: any = { /* ... */ };
 
@@ -65,12 +64,10 @@ const Services = () => {
 
               <Link
                 to={`/services/${service.slug}`}
-                className="inline-flex items-center gap-2 text-primary font-bold group-hover:text-secondary transition-colors cursor-pointer"
+            className="bg-white text-primary border-2 border-primary/10 px-8 py-3 rounded-full font-bold hover:bg-secondary hover:text-white transition-all duration-300 flex items-center gap-2 shadow-sm"
               >
                 المزيد من التفاصيل
-                <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center group-hover:bg-secondary group-hover:text-white transition-all">
                   <ArrowLeft size={16} />
-                </div>
               </Link>
             </div>
           ))}

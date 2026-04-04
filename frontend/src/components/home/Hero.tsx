@@ -1,7 +1,7 @@
 import heroImage from '../../assets/Hero-image.png'; 
 const Hero = () => {
   return (
-    <section className="relative w-full h-[600px] overflow-hidden">
+    <section className="relative w-full h-[500px] md:h-[600px] overflow-hidden">
       {/* Background Image with Overlay */}
       <div 
        className="absolute inset-0 bg-cover bg-center bg-no-repeat"

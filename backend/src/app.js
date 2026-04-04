@@ -13,6 +13,9 @@ import statsRoutes from './routes/statsRoutes.js';
 import aiRoutes from './routes/aiRoutes.js';
 import diagnosticRoutes from './routes/diagnosticRoutes.js';
 import medicineRoutes from './routes/medicineRoutes.js';
+import scheduleRoutes from './routes/scheduleRoutes.js';
+
+
 dotenv.config();    
 
 const app = express();
@@ -36,6 +39,7 @@ app.use('/api/stats', statsRoutes);
 app.use('/api/ai', aiRoutes);
 app.use('/api/diagnostics', diagnosticRoutes);
 app.use('/api/medicines', medicineRoutes);  
+app.use('/api/schedules', scheduleRoutes);  
 
 
 export default app;

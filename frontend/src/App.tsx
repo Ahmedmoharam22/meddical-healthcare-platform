@@ -28,6 +28,7 @@ import BookAppointment from './pages/BookAppointment';
 import Inventory from './pages/admin/Inventory';
 import RegisterAdmin from './pages/auth/RegisterAdmin';
 import PharmacyInventory from './pages/PharmacyInventory';
+import ManageSchedule from './pages/admin/ManageSchedule';
 
 function App() {
   return (
@@ -79,6 +80,7 @@ function App() {
         {/* {ManageServices} */}
         <Route path="services" element={<ManageServices />} />
         <Route path="inventory" element={<Inventory />} />
+        <Route path="schedule" element={<ManageSchedule />} />
      
       </Route>
     </Route>

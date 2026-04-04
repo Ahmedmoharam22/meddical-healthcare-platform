@@ -13,19 +13,19 @@
   --font-cairo: "Cairo", sans-serif;
 
   /* Custom Typography Styles - All Switched to Cairo */
-  --text-display-1: 48px;
+  --text-display-1: clamp(32px, 5vw, 48px);
   --text-display-1--font-family: var(--font-cairo);
   --text-display-1--font-weight: 700;
 
-  --text-display-2: 32px;
+  --text-display-2: clamp(24px, 4vw, 32px);
   --text-display-2--font-family: var(--font-cairo);
   --text-display-2--font-weight: 700;
 
-  --text-title: 26px;
+  --text-title: clamp(20px, 3vw, 26px);
   --text-title--font-family: var(--font-cairo);
   --text-title--font-weight: 600;
 
-  --text-caption: 18px;
+  --text-caption: clamp(14px, 2vw, 18px);
   --text-caption--font-family: var(--font-cairo);
   --text-caption--font-weight: 700;
 
@@ -33,7 +33,7 @@
   --text-body--font-family: var(--font-cairo);
   --text-body--font-weight: 400;
 
-  --text-body-2: 18px;
+  --text-body-2: clamp(16px, 2.5vw, 18px);
   --text-body-2--font-family: var(--font-cairo);
   --text-body-2--font-weight: 400;
 

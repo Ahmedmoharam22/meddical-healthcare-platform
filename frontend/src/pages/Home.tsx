@@ -8,6 +8,7 @@ import Doctors from '../components/home/Doctors';
 import Blogs from '../components/home/Blogs';
 import Contact from '../components/home/Contact';
 import SEO from '../components/SEO';
+import ScheduleSection from '../components/home/ScheduleSection';
 
 const Home = () => {
   return (
@@ -23,6 +24,7 @@ const Home = () => {
       <Services />
       <Specialties />
       <Doctors />
+      <ScheduleSection   />
       <Appointment />
       <Blogs />
       <Contact />

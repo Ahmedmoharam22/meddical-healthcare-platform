@@ -13,9 +13,9 @@ const Contact = () => {
 
   const onSubmit = (data: ContactInput) => mutate(data, { onSuccess: () => reset() });
 
-  return (
-    <section id="contact" className="py-24 bg-[#F8FAFC] font-cairo">
-       <SectionHeader title="تواصل معنا" subtitle="تواصل معنا" />
+  return (<>
+    <section id="contact" className="py-24 bg-white font-cairo">
+       <SectionHeader title="تواصل معنا" className='mb-0 text-right' subtitle="تواصل معنا" />
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto bg-white rounded-[40px] shadow-2xl overflow-hidden flex flex-col lg:flex-row">
           
@@ -116,6 +116,7 @@ const Contact = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

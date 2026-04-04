@@ -30,7 +30,7 @@ const Welcome = () => {
           <img 
             src={welcomeImage} 
             alt="فريق مجمع النور الطبي" 
-            className="w-full h-auto object-cover max-h-500px"
+            className="w-full h-auto object-cover max-h-[500px]"
           />
         </div>
       </div>

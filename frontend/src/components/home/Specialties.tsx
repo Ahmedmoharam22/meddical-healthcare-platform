@@ -1,74 +1,3 @@
-// import { 
-//   Brain, Bone, Eye, HeartPulse, Refrigerator as Stomach, 
-//   Stethoscope, Activity, User, 
-//   Ear, Droplets, Baby 
-// } from 'lucide-react';
-// import Loading from '../common/Loading';
-// import SectionHeader from '../common/SectionHeader';
-// import { useSpecialties } from '../../hooks/useSpecialties';
-
-// const Specialties = () => {
-//   const { data: specialties, isLoading } = useSpecialties();
-
-//   // خريطة الأيقونات بناءً على الداتا اللي عربناها سوا
-//   const iconMap: any = {
-//     'brain': <Brain size={32} />,
-//     'bone': <Bone size={32} />,
-//     'eye': <Eye size={32} />,
-//     'heart-beat': <HeartPulse size={32} />,
-//     'stomach': <Stomach size={32} />,
-//     'heart-pulse': <HeartPulse size={32} />,
-//     'cancer': <Activity size={32} />,
-//     // 'lungs': <Lungs size={32} />,
-//     'skin': <User size={32} />,
-//     'ear': <Ear size={32} />,
-//     'kidney': <Droplets size={32} />,
-//     'uterus': <Baby size={32} />,
-//   };
-
-//   if (isLoading) return <Loading />;
-
-//   return (
-//     <section className="py-24 bg-white font-cairo">
-//       <div className="container mx-auto px-4">
-//         {/* Header Section */}
-//         <div className="text-center mb-16">
-//          <SectionHeader subtitle="تخصصاتنا" title="التخصصات الطبية" />
-//         </div>
-
-//         {/* Specialties Grid */}
-//         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-//           {specialties?.map((spec, index) => (
-//             <div 
-//               key={index}
-//               className="group p-8 border border-gray-100 rounded-2xl transition-all duration-300 hover:bg-primary hover:border-primary hover:shadow-2xl hover:-translate-y-2 flex flex-col items-center text-center cursor-pointer"
-//             >
-//               {/* Icon Container */}
-//               <div className="w-20 h-20 bg-accent/20 text-primary rounded-2xl flex items-center justify-center mb-6 group-hover:bg-white/10 group-hover:text-white transition-colors duration-300">
-//                 {iconMap[spec.icon] || <Stethoscope size={32} />}
-//               </div>
-
-//               {/* Text */}
-//               <h3 className="text-title text-primary font-bold mb-3 group-hover:text-white transition-colors">
-//                 {spec.name}
-//               </h3>
-//               <p className="text-small text-gray-500 group-hover:text-accent transition-colors leading-relaxed">
-//                 {spec.description}
-//               </p>
-
-//               {/* Minimal Line Decoration */}
-//               <div className="mt-6 w-0 h-1 bg-secondary group-hover:w-full transition-all duration-500"></div>
-//             </div>
-//           ))}
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default Specialties;
-
-
 import { 
   Brain, Bone, Eye, HeartPulse, Refrigerator as Stomach, 
   Stethoscope, Activity, User, 
@@ -108,12 +37,10 @@ const Specialties = () => {
           
           <Link 
             to="/specialties" 
-            className="hidden md:flex items-center gap-2 text-primary font-bold hover:text-secondary transition-all group cursor-pointer"
+            className="bg-white text-primary border-2 border-primary/10 px-8 py-3 rounded-full font-bold hover:bg-secondary hover:text-white transition-all duration-300 flex items-center gap-2 shadow-sm"
           >
             مشاهدة جميع التخصصات 
-            <div className="w-10 h-10 bg-gray-50 rounded-full flex items-center justify-center group-hover:bg-secondary group-hover:text-white transition-all">
               <ArrowLeft size={18} />
-            </div>
           </Link>
         </div>
 

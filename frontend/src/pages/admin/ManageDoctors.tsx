@@ -82,8 +82,8 @@ const ManageDoctors = () => {
       </div>
 
       {/* Table */}
-      <div className="bg-white rounded-[40px] shadow-sm border border-gray-100 overflow-hidden">
-        <table className="w-full text-right">
+      <div className="bg-white rounded-[40px] shadow-sm border border-gray-100 overflow-x-auto">
+        <table className="w-full text-right min-w-[600px]">
           <thead className="bg-gray-50/50 border-b border-gray-100">
             <tr>
               <th className="p-6 text-primary font-black">الطبيب</th>

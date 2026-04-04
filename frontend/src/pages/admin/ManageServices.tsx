@@ -61,8 +61,8 @@ const ServicesManager = () => {
             </div>
 
             {/* Table UI */}
-            <div className="bg-white rounded-3xl border border-slate-100 shadow-sm overflow-hidden">
-                <table className="w-full">
+            <div className="bg-white rounded-3xl border border-slate-100 shadow-sm overflow-x-auto">
+                <table className="w-full min-w-[500px]">
                     <thead className="bg-slate-50">
                         <tr>
                             <th className="p-5 text-slate-600 font-bold">اسم الخدمة</th>

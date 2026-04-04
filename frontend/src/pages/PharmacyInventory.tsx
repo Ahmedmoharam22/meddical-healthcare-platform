@@ -168,118 +168,115 @@
 // export default PharmacyInventory;
 
 
-import React from 'react';
-
-import { Pill, Search, Info, ShieldCheck, ChevronLeft, Zap } from 'lucide-react';
+import React, { useState } from 'react';
+import { Pill, Search, ShieldCheck, Zap } from 'lucide-react';
 import { useMedicines } from '../hooks/useMedicines';
 
 const Pharmacy = () => {
-  // جلب الأدوية اللي أنت ضفتها من الداشبورد
   const { medicinesQuery } = useMedicines();
   const { data: medicines, isLoading } = medicinesQuery;
+  const [searchTerm, setSearchTerm] = useState('');
 
-  if (isLoading) return <div className="p-20 text-center font-bold text-primary animate-pulse">جاري تحميل قائمة الأدوية...</div>;
+  if (isLoading) return <div className="p-20 text-center font-bold text-primary animate-pulse font-cairo">جاري تحميل قائمة الأدوية...</div>;
 
- 
- return (
-    <div className="min-h-screen bg-slate-50 pb-20 font-sans" dir="rtl">
+  const filteredMedicines = medicines?.filter((med: any) => 
+    med.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
+    (med.genericName && med.genericName.toLowerCase().includes(searchTerm.toLowerCase()))
+  );
+
+  return (
+    <div className="min-h-screen bg-[#F8FAFC] pb-24 font-cairo" dir="rtl">
       
-      {/* --- Hero Section: تصميم فخم للعنوان --- */}
-      <div className="relative overflow-hidden bg-gradient-to-b from-primary/5 to-transparent pt-16 pb-24 px-6">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4"></div>
-        
-        <div className="max-w-7xl mx-auto relative z-10 text-center">
-          <span className="inline-block px-4 py-1.5 bg-white shadow-sm border border-slate-100 rounded-full text-primary text-xs font-black mb-4 tracking-widest uppercase">
-            نظام الصيدلية المتكامل
-          </span>
-          <h1 className="text-5xl md:text-6xl font-black text-slate-900 mb-6 tracking-tight">
-            الأدوية والمنتجات <span className="text-primary italic">الطبية</span>
-          </h1>
-          <p className="text-slate-500 max-w-xl mx-auto text-lg font-medium leading-relaxed">
-            استعرض كافة الأدوية المتوفرة في مستودعاتنا المركزية. دقة، أمان، وتوافر على مدار الساعة.
-          </p>
-        </div>
+      {/* Hero Section */}
+      <div className="bg-primary pt-16 pb-24 px-4 text-center text-white relative overflow-hidden">
+         <div className="absolute inset-0 bg-white/5"></div>
+         {/* Decorative circles */}
+         <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4"></div>
+         <div className="absolute bottom-0 left-0 w-64 h-64 bg-accent/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/4"></div>
+         
+         <div className="container mx-auto relative z-10">
+            <h5 className="text-secondary font-bold tracking-widest mb-4 uppercase">نظام الصيدلية المتكامل</h5>
+            <h1 className="text-display-1 font-black mb-6">الأدوية والمنتجات الطبية</h1>
+            <p className="max-w-2xl mx-auto text-lg text-white/80">
+              استعرض كافة الأدوية المتوفرة في مستودعاتنا المركزية. دقة، أمان، وتوافر على مدار الساعة.
+            </p>
+         </div>
       </div>
 
-      {/* --- Main Content --- */}
-      <div className="max-w-7xl mx-auto px-6 -mt-12">
-        
-        {/* Search Bar: Floating Design */}
-        <div className="bg-white/70 backdrop-blur-xl p-4 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.04)] border border-white flex flex-col md:flex-row gap-4 items-center mb-16">
-          <div className="relative flex-1 w-full">
-            <Search className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-400" size={22} />
-            <input 
-              type="text" 
-              placeholder="ابحث عن الدواء بالاسم التجاري أو العلمي..."
-              className="w-full bg-slate-50/50 border-none rounded-2xl py-4 pr-6 pl-14 outline-none focus:ring-2 ring-primary/20 transition-all font-bold text-slate-700"
-            />
-          </div>
-          <button className="bg-slate-900 text-white px-10 py-4 rounded-2xl font-black hover:bg-primary transition-all shadow-lg shadow-slate-900/10">
-            بحث متقدم
-          </button>
-        </div>
+      <div className="container mx-auto px-4 -mt-12 relative z-20">
+         {/* Search Bar */}
+         <div className="bg-white p-4 rounded-2xl shadow-lg border border-primary/10 flex flex-col md:flex-row gap-4 items-center mb-16 max-w-4xl mx-auto">
+           <div className="relative flex-1 w-full flex items-center">
+             <Search className="absolute right-5 text-primary/40" size={22} />
+             <input 
+               type="text" 
+               placeholder="ابحث عن الدواء بالاسم التجاري أو العلمي..."
+               value={searchTerm}
+               onChange={(e) => setSearchTerm(e.target.value)}
+               className="w-full bg-slate-50 border-none rounded-xl py-4 pr-14 pl-6 outline-none focus:ring-2 focus:ring-secondary/50 focus:border-secondary transition-all text-primary font-bold text-lg"
+             />
+           </div>
+         </div>
 
-        {/* --- الأدوية: Grid Cards --- */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {medicines?.map((med: any) => (
-            <div key={med._id} className="group relative bg-white rounded-[3rem] p-2 border border-slate-100 shadow-sm hover:shadow-[0_30px_60px_rgba(0,0,0,0.08)] transition-all duration-500">
-              
-              {/* Card Inner Content */}
-              <div className="bg-[#fcfdfe] rounded-[2.5rem] p-8 h-full flex flex-col">
-                
-                {/* Top Row: Category & Icon */}
-                <div className="flex justify-between items-start mb-8">
-                  <div className="w-14 h-14 bg-white shadow-sm rounded-2xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500">
-                    <Pill size={28} />
-                  </div>
-                  <span className="bg-primary/10 text-primary px-4 py-1.5 rounded-full text-[10px] font-black tracking-tighter">
-                    {med.category}
-                  </span>
-                </div>
+         {/* Products Grid */}
+         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            {filteredMedicines?.map((med: any) => (
+              <div key={med._id} className="bg-white rounded-[32px] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 group border border-primary/5 flex flex-col h-full">
+                 <div className="p-6 relative flex flex-col flex-grow">
+                    {/* Category Label */}
+                    <span className="absolute top-6 left-6 bg-accent/30 text-primary px-4 py-1.5 rounded-full text-xs font-black tracking-wider">
+                       {med.category}
+                    </span>
 
-                {/* Medicine Info */}
-                <div className="flex-1">
-                  <h3 className="text-2xl font-black text-slate-800 mb-2 group-hover:text-primary transition-colors italic">
-                    {med.name}
-                  </h3>
-                  <div className="flex items-center gap-2 text-slate-400 mb-6">
-                    <Zap size={14} />
-                    <span className="text-xs font-bold uppercase">{med.genericName || 'Formula Active'}</span>
-                  </div>
+                    {/* Icon */}
+                    <div className="w-16 h-16 bg-primary/5 text-secondary rounded-2xl flex items-center justify-center mb-6 group-hover:bg-secondary group-hover:text-white transition-all duration-300">
+                      <Pill size={32} />
+                    </div>
 
-                  {/* Price Tag */}
-                  <div className="inline-flex items-end gap-1 bg-white px-5 py-2 rounded-2xl border border-slate-50 shadow-sm mb-6">
-                    <span className="text-2xl font-black text-slate-900">{med.sellingPrice || 0}</span>
-                    <span className="text-[10px] font-bold text-slate-400 mb-1.5 uppercase">EGP</span>
-                  </div>
-                </div>
+                    <h3 className="text-xl font-bold text-primary mb-2 line-clamp-2 group-hover:text-secondary transition-colors" title={med.name}>
+                       {med.name}
+                    </h3>
+                    
+                    <div className="flex items-center gap-2 text-primary/60 mb-6">
+                       <Zap size={14} />
+                       <span className="text-xs font-bold uppercase truncate">{med.genericName || 'Formula Active'}</span>
+                    </div>
 
-                {/* Footer Action */}
-                <button className="w-full flex items-center justify-between bg-white border border-slate-100 p-4 rounded-2xl group-hover:bg-slate-900 group-hover:text-white transition-all duration-500">
-                  <span className="font-black text-sm">عرض المواصفات</span>
-                  <div className="bg-slate-50 p-2 rounded-xl group-hover:bg-white/10">
-                    <ChevronLeft size={18} />
-                  </div>
-                </button>
+                    {/* Footer / Price & Status */}
+                    <div className="flex items-center justify-between mt-auto pt-6 border-t border-primary/5">
+                       <div className="flex flex-col">
+                          <span className="text-[10px] text-primary/50 font-bold mb-1 uppercase tracking-widest">السعر</span>
+                          <div className="flex items-baseline gap-1">
+                             <span className="text-2xl font-black text-secondary">{med.sellingPrice || 0}</span>
+                             <span className="text-xs text-primary/60 font-bold">ج.م</span>
+                          </div>
+                       </div>
+                       
+                       {med.stock > 0 ? (
+                         <div className="flex items-center gap-1.5 text-emerald-600 text-xs font-black bg-emerald-50 px-3 py-2 rounded-xl border border-emerald-100">
+                           <ShieldCheck size={16} /> متوفر
+                         </div>
+                       ) : (
+                         <div className="flex items-center gap-1.5 text-red-500 text-xs font-black bg-red-50 px-3 py-2 rounded-xl border border-red-100">
+                           غير متوفر
+                         </div>
+                       )}
+                    </div>
+                 </div>
               </div>
+            ))}
+         </div>
 
-              {/* Decorative Badge for Availability */}
-              <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity">
-                <ShieldCheck className="text-emerald-500" size={24} />
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Empty State */}
-        {medicines?.length === 0 && (
-          <div className="text-center py-40">
-            <div className="w-24 h-24 bg-slate-50 rounded-full flex items-center justify-center mx-auto mb-6 text-slate-200">
-               <Pill size={48} />
-            </div>
-            <h3 className="text-xl font-bold text-slate-400 italic">المخزون فارغ حالياً..</h3>
-          </div>
-        )}
+         {/* Empty State */}
+         {filteredMedicines?.length === 0 && (
+           <div className="text-center py-24 bg-white rounded-[32px] border border-primary/5 shadow-sm max-w-3xl mx-auto">
+             <div className="w-24 h-24 bg-primary/5 rounded-full flex items-center justify-center mx-auto mb-6 text-primary/30">
+                <Pill size={48} />
+             </div>
+             <h3 className="text-2xl font-black text-primary mb-2">لم يتم العثور على أدوية</h3>
+             <p className="text-primary/60 font-medium">حاول البحث بكلمات مختلفة أو راجع الاسم الصحيح للدواء.</p>
+           </div>
+         )}
       </div>
     </div>
   );

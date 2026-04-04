@@ -37,3 +37,4 @@ src/
  ├── schemas/        # مخططات Validation باستخدام Zod
  ├── services/       # إعدادات Axios والاتصال بالـ API
  └── types/          # تعريفات TypeScript (Interfaces)
+ 

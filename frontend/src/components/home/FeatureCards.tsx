@@ -8,7 +8,7 @@ const features = [
 
 const FeatureCards = () => {
   return (
-    <div className="container mx-auto px-4 -mt-16 relative z-20">
+    <div className="container mx-auto px-4 -mt-8 md:-mt-16 relative z-20">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-0 shadow-xl rounded-lg overflow-hidden">
         {features.map((item, index) => (
           <div 
