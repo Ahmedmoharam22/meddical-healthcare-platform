@@ -64,10 +64,6 @@ const Navbar = () => {
 
             {/* الأزرار اليمين (بحث + حجز) */}
             <div className="flex items-center gap-3 lg:gap-6">
-              <button className="text-white hover:text-secondary p-2 transition">
-                <Search size={22} />
-              </button>
-              
               <Link
                 to="/appointment"
                 className="hidden sm:block bg-secondary text-primary px-6 py-2.5 rounded-xl font-black hover:bg-white transition-all duration-300 shadow-lg active:scale-95"

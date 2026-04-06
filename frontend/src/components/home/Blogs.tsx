@@ -21,9 +21,9 @@ const News = () => {
             <h2 className="text-display-2 text-primary font-bold">آخر المقالات الطبية</h2>
             <div className="w-20 h-1.5 bg-accent mt-4 rounded-full"></div>
           </div>
-          <button className="bg-white text-primary border-2 border-primary/10 px-8 py-3 rounded-full font-bold hover:bg-primary hover:text-white transition-all duration-300 flex items-center gap-2 shadow-sm cursor-pointer group">
+          <Link to="/blogs" className="bg-white text-primary border-2 border-primary/10 px-8 py-3 rounded-full font-bold hover:bg-primary hover:text-white transition-all duration-300 flex items-center gap-2 shadow-sm cursor-pointer group">
             مشاهدة المدونة بالكامل <ArrowRight size={18} className="group-hover:-translate-x-1 transition-transform"/>
-          </button>
+          </Link>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">

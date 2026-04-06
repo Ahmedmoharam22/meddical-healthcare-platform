@@ -4,6 +4,7 @@ import { useState } from 'react';
 import ConfirmModal from '../../components/shared/ConfirmModal';
 import { useAppointments } from '../../hooks/useAppointments';
 import { MessageCircle, CheckCircle, XCircle, Trash2, User, Calendar as CalendarIcon, Phone } from 'lucide-react';
+import AdminLoader from '../../components/dashboard/AdminLoader';
 import { sendWhatsAppMessage } from '../../utils/whatsappService';
 
 const ManageAppointments = () => {
@@ -25,7 +26,7 @@ const ManageAppointments = () => {
     }
   };
 
-  if (isLoading) return <div className="p-10 text-center font-black">جاري تحميل المواعيد...</div>;
+  if (isLoading) return <AdminLoader label="جاري تحميل المواعيد..." />;
 
   return (
     <div className="p-6 space-y-6" dir="rtl">

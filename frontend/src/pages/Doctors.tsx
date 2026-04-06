@@ -12,8 +12,7 @@ const DoctorsPage = () => {
   
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedSpecialty, setSelectedSpecialty] = useState('all');
-    const [selectedDoctor, setSelectedDoctor] = useState<any>(null);
-  
+  const [selectedDoctor, setSelectedDoctor] = useState<any>(null);
 
   if (docsLoading) return <Loading />;
 
@@ -27,49 +26,50 @@ const DoctorsPage = () => {
   return (
     <div className="font-cairo bg-[#F8FAFC] min-h-screen pb-20">
       <SEO
-      title="أطباء مجمع النور الطبي - نخبة الاستشاريين والأخصائيين"
-      description="تعرف على نخبة أطباء مجمع النور الطبي، استشاريين وأخصائيين في مختلف التخصصات، واحجز موعدك اليوم."
-      keywords="أطباء، استشاريين، أخصائيين، مجمع النور الطبي، طب، صحة، عيادات، تخصصات"
+        title="أطباء مجمع النور الطبي - نخبة الاستشاريين والأخصائيين"
+        description="تعرف على نخبة أطباء مجمع النور الطبي، استشاريين وأخصائيين في مختلف التخصصات، واحجز موعدك اليوم."
+        keywords="أطباء، استشاريين، أخصائيين، مجمع النور الطبي، طب، صحة، عيادات، تخصصات"
       />
+
       {/* 1. Hero Section */}
       <section className="bg-primary pt-32 pb-20 text-white relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10 text-center">
-          <h1 className="text-4xl md:text-6xl font-black mb-6">نخبة أطباء مجمع النور</h1>
-          <p className="text-white/70 max-w-2xl mx-auto text-lg">
-            نضم مجموعة من أفضل الاستشاريين والأخصائيين الملتزمين بتقديم أعلى مستويات الرعاية الطبية لأهالينا.
+          <h1 className="text-4xl md:text-6xl font-black mb-6 tracking-tight">نخبة أطباء مجمع النور</h1>
+          <p className="text-white/70 max-w-2xl mx-auto text-lg font-medium">
+            نضم مجموعة من أفضل الاستشاريين والأخصائيين الملتزمين بتقديم أعلى مستويات الرعاية الطبية بأحدث التقنيات.
           </p>
         </div>
-        <div className="absolute top-0 left-0 w-64 h-64 bg-secondary/10 rounded-full blur-3xl -translate-x-1/2"></div>
+        <div className="absolute top-0 left-0 w-64 h-64 bg-secondary/20 rounded-full blur-[100px] -translate-x-1/2"></div>
       </section>
 
-      {/* 2. Filter Bar - شريط التحكم */}
-      <div className="container mx-auto px-4 -mt-10 relative z-30">
-        <div className="bg-white p-6 rounded-[30px] shadow-xl border border-gray-100 flex flex-col lg:flex-row gap-6 items-center">
-          {/* البحث */}
+      {/* 2. Filter Bar */}
+      <div className="container mx-auto px-4 -mt-12 relative z-30">
+        <div className="bg-white p-6 rounded-[35px] shadow-2xl border border-gray-50 flex flex-col lg:flex-row gap-6 items-center">
           <div className="relative flex-grow w-full">
             <input 
               type="text"
-              placeholder="ابحث عن طبيب بالاسم..."
-              className="w-full p-4 pr-12 rounded-2xl bg-gray-50 border-none outline-none focus:ring-2 focus:ring-secondary/20 transition-all font-bold"
+              placeholder="ابحث عن طبيب بالاسم أو التخصص..."
+              className="w-full p-5 pr-14 rounded-2xl bg-gray-50 border-2 border-transparent focus:border-secondary/20 focus:bg-white outline-none transition-all font-bold text-primary"
               onChange={(e) => setSearchTerm(e.target.value)}
             />
-            <Search className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400" size={20} />
+            <Search className="absolute right-5 top-1/2 -translate-y-1/2 text-gray-400" size={24} />
           </div>
 
-          {/* فلتر التخصصات */}
-          <div className="flex items-center gap-3 w-full lg:w-auto overflow-x-auto pb-2 lg:pb-0 no-scrollbar">
-            <Filter size={20} className="text-secondary shrink-0" />
+          <div className="flex items-center gap-3 w-full lg:w-auto overflow-x-auto py-2 no-scrollbar">
+            <div className="bg-secondary/10 p-3 rounded-xl text-secondary shrink-0">
+               <Filter size={20} />
+            </div>
             <button 
               onClick={() => setSelectedSpecialty('all')}
-              className={`px-6 py-3 rounded-xl font-bold whitespace-nowrap transition-all ${selectedSpecialty === 'all' ? 'bg-secondary text-white shadow-lg' : 'bg-gray-100 text-gray-500 hover:bg-gray-200'}`}
+              className={`px-8 py-4 rounded-2xl font-black whitespace-nowrap transition-all ${selectedSpecialty === 'all' ? 'bg-secondary text-white shadow-lg shadow-secondary/20' : 'bg-gray-100 text-gray-500 hover:bg-gray-200'}`}
             >
-              الكل
+              كل التخصصات
             </button>
             {specialties?.map((spec: any) => (
               <button 
                 key={spec._id}
                 onClick={() => setSelectedSpecialty(spec._id)}
-                className={`px-6 py-3 rounded-xl font-bold whitespace-nowrap transition-all ${selectedSpecialty === spec._id ? 'bg-secondary text-white shadow-lg' : 'bg-gray-100 text-gray-500 hover:bg-gray-200'}`}
+                className={`px-8 py-4 rounded-2xl font-black whitespace-nowrap transition-all ${selectedSpecialty === spec._id ? 'bg-secondary text-white shadow-lg shadow-secondary/20' : 'bg-gray-100 text-gray-500 hover:bg-gray-200'}`}
               >
                 {spec.name}
               </button>
@@ -79,64 +79,75 @@ const DoctorsPage = () => {
       </div>
 
       {/* 3. Doctors Grid */}
-      <section className="container mx-auto px-4 mt-16">
+      <section className="container mx-auto px-4 mt-20">
         {filteredDoctors?.length === 0 ? (
-          <div className="text-center py-20 bg-white rounded-[40px] shadow-sm">
-            <p className="text-2xl text-gray-400 font-bold">لم يتم العثور على أطباء بهذا البحث..</p>
+          <div className="text-center py-32 bg-white rounded-[50px] shadow-sm border-2 border-dashed border-gray-100">
+            <div className="bg-gray-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+               <Search size={40} className="text-gray-300" />
+            </div>
+            <p className="text-2xl text-gray-400 font-black">عذراً، لم نجد أطباء يطابقون بحثك حالياً</p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
             {filteredDoctors?.map((doc: any) => (
               <div 
                 key={doc._id} 
-                className="group bg-white rounded-[40px] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-50 flex flex-col"
+                className="group bg-white rounded-[45px] overflow-hidden shadow-sm hover:shadow-3xl transition-all duration-500 border border-gray-100 flex flex-col transform hover:-translate-y-2"
               >
-                {/* Image Section */}
-                <div className="h-64 relative overflow-hidden bg-gray-100">
+                <div className="h-72 relative overflow-hidden bg-gray-200">
                   <img 
                     src={`http://localhost:5000/uploads/${doc.image}`} 
                     alt={doc.name}
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110"
+                    className="w-full h-full object-cover grayscale-[0.5] group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110"
                   />
-                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm p-2 rounded-xl">
-                    <Award className="text-secondary" size={20} />
+                  <div className="absolute top-5 right-5 bg-white/90 backdrop-blur-md px-4 py-2 rounded-2xl flex items-center gap-2 shadow-sm">
+                    <Award className="text-secondary" size={18} />
+                    <span className="text-xs font-black text-primary">استشاري</span>
                   </div>
                 </div>
 
-                {/* Info Section */}
                 <div className="p-8 flex flex-col flex-grow">
-                  <div className="mb-4">
-                    <span className="text-xs font-black text-secondary uppercase tracking-widest bg-secondary/10 px-3 py-1 rounded-lg">
+                  <div className="mb-6 text-right">
+                    <span className="inline-block text-[10px] font-black text-secondary uppercase tracking-[2px] bg-secondary/10 px-4 py-1.5 rounded-full mb-3">
                       {doc.specialty?.name || 'تخصص عام'}
                     </span>
-                    <h3 className="text-2xl font-bold text-primary mt-2 group-hover:text-secondary transition-colors">
-                      {doc.name}
+                    <h3 className="text-2xl font-black text-primary group-hover:text-secondary transition-colors line-clamp-1">
+                      د. {doc.name}
                     </h3>
                   </div>
 
-                  <div className="space-y-3 mb-8">
-                    <div className="flex items-center gap-2 text-gray-500 text-sm">
-                      <Clock size={16} className="text-accent" />
-                      <span>{doc.schedule?.[0]?.day || 'المواعيد: اتصل بنا'}</span>
+                  <div className="space-y-4 mb-10">
+                    <div className="flex items-center gap-3 text-gray-500 font-bold text-sm">
+                      <div className="w-8 h-8 bg-accent/10 rounded-lg flex items-center justify-center text-accent">
+                         <Clock size={16} />
+                      </div>
+                      <span>{doc.schedule?.[0]?.day || 'مواعيد متغيرة'}</span>
                     </div>
-                    <div className="flex items-center gap-2 text-gray-500 text-sm">
-                      <Stethoscope size={16} className="text-accent" />
-                      <span className="line-clamp-1">{doc.title || 'استشاري مجمع النور'}</span>
+                    <div className="flex items-center gap-3 text-gray-500 font-bold text-sm">
+                      <div className="w-8 h-8 bg-primary/5 rounded-lg flex items-center justify-center text-primary/40">
+                         <Stethoscope size={16} />
+                      </div>
+                      <span className="line-clamp-1">{doc.title || 'عضو هيئة التدريس بمجمع النور'}</span>
                     </div>
                   </div>
 
-                  <button    onClick={() => setSelectedDoctor(doc)} className="mt-auto w-full py-4 bg-primary text-white rounded-2xl font-bold hover:bg-secondary hover:shadow-lg hover:shadow-secondary/30 transition-all active:scale-95 cursor-pointer">
-                    عرض الملف الشخصي
+                  <button 
+                    onClick={() => setSelectedDoctor(doc)} 
+                    className="mt-auto w-full py-5 bg-primary text-white rounded-[22px] font-black text-lg hover:bg-secondary hover:shadow-xl hover:shadow-secondary/30 transition-all active:scale-95 cursor-pointer flex items-center justify-center gap-2"
+                  >
+                    حجز موعد كشف
                   </button>
                 </div>
               </div>
             ))}
           </div>
         )}
-         <DoctorModal  
-                  doctor={selectedDoctor} 
-                  onClose={() => setSelectedDoctor(null)} 
-                />
+
+        {/* المودال اللي هيفتح فيه الفورم */}
+        <DoctorModal  
+          doctor={selectedDoctor} 
+          onClose={() => setSelectedDoctor(null)} 
+        />
       </section>
     </div>
   );

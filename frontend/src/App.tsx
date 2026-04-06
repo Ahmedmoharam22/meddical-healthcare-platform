@@ -13,7 +13,6 @@ import Contact from './pages/Contact';
 import ProtectedRoute from './admin/ProtectedRoute';
 import Login from './pages/auth/Login';
 import AdminLayout from './components/layout/AdminLayout';
-import DashboardOverview from './pages/admin/dashboard';
 import ManageDoctors from './pages/admin/ManageDoctors';
 import ManageSpecialties from './pages/admin/ManageSpecialties';
 import ManageBlogs from './pages/admin/ManageBlogs';
@@ -29,6 +28,9 @@ import Inventory from './pages/admin/Inventory';
 import RegisterAdmin from './pages/auth/RegisterAdmin';
 import PharmacyInventory from './pages/PharmacyInventory';
 import ManageSchedule from './pages/admin/ManageSchedule';
+import PaymentSuccess from './pages/payments/PaymentSuccess';
+import PaymentFailed from './pages/payments/PaymentFailed';
+import DashboardOverview from './pages/admin/DashboardOverview';
 
 function App() {
   return (
@@ -44,7 +46,7 @@ function App() {
       <Route path="/about" element={<About />} />
       <Route path="/services" element={<Service />} />
       <Route path="/specialties" element={<Specialties />} />
-      <Route path="/specialties/:slug" element={<SpecialtyDetails />} />
+      <Route path="/specialties/:id" element={<SpecialtyDetails />} />
       <Route path="/doctors" element={<Doctors />} />
       <Route path="/blogs" element={<Blog />} />
       <Route path="/blog/:id" element={<SingleBlog />} />
@@ -55,6 +57,9 @@ function App() {
       <Route path="*" element={<NotFound />} />
       <Route path="/appointment" element={<BookAppointment />} />
       <Route path="/pharmacy" element={<PharmacyInventory />} />
+      <Route path="/payment-success" element={<PaymentSuccess />} />
+      <Route path="/payment-failed" element={<PaymentFailed />} />
+
     </Route>
 
     {/* 2. روابط الإدارة المحمية (AdminLayout) */}

@@ -35,17 +35,15 @@ const Specialties = () => {
       <section className="py-24 container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {specialties?.map((spec) => {
-            // اختيار الأيقونة من مكتبة Lucide بناءً على الداتا أو أيقونة افتراضية
-            const IconComponent = (Icons as any)[spec.icon] || Icons.Stethoscope;
 
             return (
               <div 
                 key={spec._id} 
-                className="group bg-white rounded-[45px] p-10 shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100 relative flex flex-col h-full overflow-hidden"
+                className="group cursor-pointer bg-white rounded-[45px] p-10 shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100 relative flex flex-col h-full overflow-hidden"
               >
                 {/* أيقونة التخصص */}
                 <div className="w-20 h-20 bg-gray-50 rounded-3xl flex items-center justify-center mb-8 group-hover:bg-secondary group-hover:rotate-6 transition-all duration-500">
-                  <IconComponent className="text-primary group-hover:text-white transition-colors" size={40} />
+                  <span className="text-4xl leading-none select-none">{spec.icon}</span>
                 </div>
 
                 {/* المحتوى */}
@@ -72,9 +70,9 @@ const Specialties = () => {
                 </Link>
 
                 {/* Decoration: أيقونة باهتة في الخلفية تظهر عند الهوفر */}
-                <div className="absolute top-10 left-10 text-gray-100 -z-0 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
-                   <IconComponent size={80} strokeWidth={1} />
-                </div>
+                {/* <div className="absolute top-10 left-10 text-gray-100 -z-0 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+                  <span className="text-4xl leading-none select-none">{spec.icon}</span>
+                </div> */}
               </div>
             );
           })}

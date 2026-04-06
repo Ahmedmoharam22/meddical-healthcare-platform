@@ -3,6 +3,7 @@ import { useDoctors } from '../../hooks/useDoctors';
 import { useSpecialties } from '../../hooks/useSpecialties';
 import { useForm } from 'react-hook-form';
 import { Trash2, Edit, UserPlus, Loader2, X, Stethoscope, Plus } from 'lucide-react';
+import AdminLoader from '../../components/dashboard/AdminLoader';
 import ConfirmModal from '../../components/shared/ConfirmModal';
 import { API_URL } from '../../api/axiosInstance';
 
@@ -61,12 +62,7 @@ const ManageDoctors = () => {
     if (file) setPreviewImage(URL.createObjectURL(file));
   };
 
-  if (isLoading) return (
-    <div className="flex flex-col items-center justify-center p-20 space-y-4">
-      <Loader2 className="animate-spin text-secondary" size={48} />
-      <p className="text-primary font-black animate-pulse">جاري تحميل البيانات...</p>
-    </div>
-  );
+  if (isLoading) return <AdminLoader label="جاري تحميل الأطباء..." />;
 
   return (
     <div className="space-y-6 animate-in fade-in duration-500 relative" dir="rtl">

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin, ArrowRight, Heart } from 'lucide-react';
 import Logo from '../common/Logo';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -56,13 +57,21 @@ const Footer = () => {
               <span className="absolute bottom-[-8px] right-0 w-8 h-1 bg-secondary rounded-full"></span>
             </h4>
             <ul className="space-y-4">
-              {['الرئيسية', 'عن المركز', 'الأطباء', 'الخدمات', 'المقالات'].map((item) => (
-                <li key={item}>
-                  <a href="#" className="text-white/70 hover:text-secondary flex items-center gap-2 transition-all cursor-pointer group">
-                    <ArrowRight size={14} className="group-hover:translate-x-[-4px] transition-transform" /> {item}
-                  </a>
-                </li>
-              ))}
+                <Link className='text-white/70 hover:text-secondary flex items-center gap-2 transition-all cursor-pointer group' to="/" key="home">
+                    <ArrowRight size={14} className="group-hover:translate-x-[-4px] transition-transform" /> الرئيسية
+                </Link>
+                <Link className='text-white/70 hover:text-secondary flex items-center gap-2 transition-all cursor-pointer group' to="/about" key="about">
+                    <ArrowRight size={14} className="group-hover:translate-x-[-4px] transition-transform" /> عن المركز
+                </Link>
+                <Link className='text-white/70 hover:text-secondary flex items-center gap-2 transition-all cursor-pointer group' to="/doctors" key="doctors">
+                    <ArrowRight size={14} className="group-hover:translate-x-[-4px] transition-transform" /> الأطباء
+                </Link>
+                <Link className='text-white/70 hover:text-secondary flex items-center gap-2 transition-all cursor-pointer group' to="/services" key="services">
+                    <ArrowRight size={14} className="group-hover:translate-x-[-4px] transition-transform" /> الخدمات
+                </Link>
+                <Link className='text-white/70 hover:text-secondary flex items-center gap-2 transition-all cursor-pointer group' to="/blogs" key="blogs">
+                    <ArrowRight size={14} className="group-hover:translate-x-[-4px] transition-transform" /> المقالات
+                </Link>
             </ul>
           </div>
 
@@ -112,7 +121,7 @@ const Footer = () => {
         <div className="pt-8 border-t border-white/5 text-center md:flex md:justify-between items-center text-white/40 text-sm">
           <p>© {currentYear} مجمع النور الطبي. جميع الحقوق محفوظة.</p>
           <p className="mt-4 md:mt-0 flex items-center justify-center gap-1">
-            صنع بكل <Heart size={14} className="text-red-500 fill-red-500" /> في المنصورة
+            صنع بكل <Heart size={14} className="text-red-500 fill-red-500" /> A7med Mo7aram
           </p>
         </div>
       </div>

@@ -3,6 +3,7 @@ import { useSpecialties } from '../../hooks/useSpecialties';
 import { useForm } from 'react-hook-form';
 import { Plus, Trash2, LayoutGrid, Loader2, X, Microscope } from 'lucide-react';
 import ConfirmModal from '../../components/shared/ConfirmModal';
+import AdminLoader from '../../components/dashboard/AdminLoader';
 
 const ManageSpecialties = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -19,7 +20,7 @@ const ManageSpecialties = () => {
     });
   };
 
-  if (isLoading) return <Loader2 className="animate-spin mx-auto mt-20" size={48} />;
+  if (isLoading) return <AdminLoader label="جاري تحميل التخصصات..." />;
 
   return (
     <div className="p-6 space-y-6" dir="rtl">

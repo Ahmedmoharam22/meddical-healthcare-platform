@@ -1,5 +1,6 @@
 import { ArrowLeft } from 'lucide-react'; // غيرنا السهم للشمال عشان العربي
-import welcomeImage from '../../assets/welcome-banner.png'; 
+import welcomeImage from '../../assets/banner3.jpg'; 
+import { Link } from 'react-router-dom';
 
 const Welcome = () => {
   return (
@@ -20,9 +21,9 @@ const Welcome = () => {
           </p>
           
           {/* Learn More Link */}
-          <button className="flex items-center gap-2 mx-auto text-secondary text-button font-bold hover:gap-4 transition-all">
+          <Link to="/about" className="flex items-center cursor-pointer hover:text-primary gap-2 w-fit mx-auto text-secondary text-button font-bold hover:gap-4 transition-all">
             اقرأ المزيد <ArrowLeft size={18} />
-          </button>
+          </Link>
         </div>
 
         {/* Wide Image Section */}

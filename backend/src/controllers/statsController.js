@@ -1,4 +1,8 @@
 import Appointment from '../models/appointmentModel.js';
+import Doctor from '../models/doctorModel.js';
+import Specialty from '../models/specialtyModel.js';
+import Message from '../models/Message.js';
+import Blog from '../models/blogModel.js';
 
 export const getDashboardStats = async (req, res) => {
   try {
@@ -26,7 +30,23 @@ export const getDashboardStats = async (req, res) => {
       { $sort: { "_id": 1 } }
     ]);
 
-    res.json({ appointmentsBySpecialty, statusStats, last7Days });
+    // 4. الأرقام الإجمالية لبطاقات لوحة التحكم
+    const [totalDoctors, totalSpecialties, totalMessages, totalBlogs] = await Promise.all([
+      Doctor.countDocuments(),
+      Specialty.countDocuments(),
+      Message.countDocuments(),
+      Blog.countDocuments(),
+    ]);
+
+    res.json({
+      appointmentsBySpecialty,
+      statusStats,
+      last7Days,
+      totalDoctors,
+      totalSpecialties,
+      totalMessages,
+      totalBlogs,
+    });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }

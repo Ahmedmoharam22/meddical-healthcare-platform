@@ -7,7 +7,7 @@ export const getSchedules = async (req, res) => {
     const { day } = req.query; // لو باعت يوم معين في الـ URL
     const query = (day && day !== "") ? { day } : {};
     const schedules = await Schedule.find(query)
-      .populate('doctor', 'name specialization slug image') // بنجيب بيانات الدكتور اللي محتاجينها بس
+      .populate('doctor', 'name specialization slug image') 
       .sort({ day: 1 });
 
     res.status(200).json(schedules);

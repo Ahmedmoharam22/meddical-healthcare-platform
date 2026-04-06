@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Activity, ArrowRight, Stethoscope, AlertCircle } from 'lucide-react';
 
-// الداتا دي المفروض تيجي من الباك إند مستقبلاً، بس هنثبتها هنا للـ Demo الاحترافي
 const bodyData = {
   head: { title: "الرأس والدماغ", symptoms: ["صداع نصفي", "دوار", "طنين أذن"], clinic: "عيادة المخ والأعصاب" },
   chest: { title: "الصدر والقلب", symptoms: ["ضيق تنفس", "أخذة في القلب", "كحة مزمنة"], clinic: "عيادة الصدر والقلب" },

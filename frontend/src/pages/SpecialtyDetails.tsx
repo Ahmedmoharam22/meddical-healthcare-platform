@@ -5,15 +5,15 @@ import Loading from '../components/common/Loading';
 import SEO from '../components/SEO';
 
 const SpecialtyDetails = () => {
-  const { slug } = useParams(); // بناخد الـ slug من الـ URL
-  const { data: doctors, isLoading } = useDoctorsBySpecialty(slug || "");
+  const { id } = useParams(); // بناخد الـ slug من الـ URL
+  const { data: doctors, isLoading } = useDoctorsBySpecialty(id || "");
 
   if (isLoading) return <Loading />;
 
   // استخراج اسم التخصص بشكل آمن من أول دكتور يرجع، أو من الـ slug كخطة بديلة
   const specialtyName = doctors && doctors.length > 0 
     ? doctors[0]?.specialty?.name 
-    : slug?.replace(/-/g, ' ');
+    : id?.replace(/-/g, ' ');
 
   return (
     <div className="min-h-screen bg-[#F8FAFC] font-cairo pb-20">
@@ -65,7 +65,8 @@ const SpecialtyDetails = () => {
                 {/* صورة الدكتور مع تأثير بصري */}
                 <div className="h-72 bg-gray-100 relative overflow-hidden">
                   <img 
-                    src={doc.image || '/assets/default-doctor.jpg'} 
+                    // src={doc.image || '/assets/default-doctor.jpg'} 
+                    src={`http://localhost:5000/uploads/${doc.image}`}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
                     alt={doc.name} 
                   />
@@ -106,10 +107,10 @@ const SpecialtyDetails = () => {
                   </div>
 
                   {/* زر الحجز */}
-                  <button className="w-full py-5 bg-primary text-white rounded-[24px] font-black hover:bg-secondary transition-all shadow-lg hover:shadow-secondary/30 cursor-pointer flex items-center justify-center gap-2 group/btn">
+                  <Link to="/appointment" className="w-full py-5 bg-primary text-white rounded-[24px] font-black hover:bg-secondary transition-all shadow-lg hover:shadow-secondary/30 cursor-pointer flex items-center justify-center gap-2 group/btn">
                     احجز موعد الآن
                     <ChevronRight size={18} className="rotate-180 group-hover/btn:-translate-x-1 transition-transform" />
-                  </button>
+                  </Link>
                 </div>
               </div>
             ))}

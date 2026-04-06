@@ -17,7 +17,7 @@ export interface Doctor {
 specialty: {
     _id: string;
     name: string;
-  } | string; // ممكن يكون Object أو String (ID)
+  } | string; 
 bio: string;
 image: string;
 socialLinks: {
@@ -93,4 +93,22 @@ export interface MedicineProps {
     expiryDate: string;
     category: string;
   };
+}
+
+
+export interface BookingPayload {
+  doctorId: string;
+  specialtyId: string;
+  patientName: string;
+  patientPhone: string;
+  appointmentDate: string | Date;
+  paymentMethod: "online" | "on_site";
+}
+
+
+export interface Props {
+  doctorId: string;
+  specialtyId: string;
+  specialtyName: string;
+  price: number;
 }

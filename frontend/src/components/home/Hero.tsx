@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import heroImage from '../../assets/Hero-image.png'; 
 const Hero = () => {
   return (
@@ -22,15 +23,15 @@ const Hero = () => {
           </h5>
           
           {/* Main Title - Display 1 */}
-          <h1 className="text-display-1 text-primary mb-6 leading-tight">
+          <h1 className="text-display-1 text-primary mb-8 leading-tight">
            نحن نقود الطريق <br />
   في التميز الطبي
           </h1>
 
           {/* Button - Text Button Style */}
-          <button className="bg-accent text-primary px-8 py-3 rounded-full text-button font-medium hover:bg-primary hover:text-white transition duration-300 shadow-md">
+          <Link to="/services" className="bg-accent cursor-pointer text-primary px-8 py-3 rounded-full text-button font-medium hover:bg-primary hover:text-white transition duration-300 shadow-md">
             خدماتنا 
-          </button>
+          </Link>
         </div>
       </div>
     </section>

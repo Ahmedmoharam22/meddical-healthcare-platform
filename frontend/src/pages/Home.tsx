@@ -12,8 +12,8 @@ import ScheduleSection from '../components/home/ScheduleSection';
 
 const Home = () => {
   return (
-    <>
-    <SEO
+    <main>
+      <SEO
         title="مجمع النور الطبي - رعاية شاملة بجودة عالية"
         description="مجمع النور الطبي يقدم خدمات طبية متكاملة في المحمودية. أطباء متخصصون، أحدث الأجهزة، ورعاية إنسانية بأسعار مخفضة."
         keywords="مجمع النور الطبي، طب، صحة، محمودية، عيادات، أطباء، خدمات طبية، رعاية صحية"
@@ -21,18 +21,14 @@ const Home = () => {
       <Hero />
       <FeatureCards />
       <Welcome />
-      <Services />
       <Specialties />
+      <Services />
       <Doctors />
-      <ScheduleSection   />
-      <Appointment />
+      <ScheduleSection />
       <Blogs />
+      <Appointment />
       <Contact />
-      {/* باقي السكاشن هتيجي هنا */}
-      <section className="py-20 text-center">
-        <h2 className="text-display-2 text-primary">باقي محتوى الصفحة...</h2>
-      </section>
-    </>
+    </main>
   );
 };
 

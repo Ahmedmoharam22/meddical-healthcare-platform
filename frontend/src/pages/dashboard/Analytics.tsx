@@ -1,16 +1,13 @@
-import { useQuery } from '@tanstack/react-query';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, LineChart, Line } from 'recharts';
 import { transformSpecialtyData, transformStatusData } from '../../utils/chartTransformers';
-import axiosInstance from '../../api/axiosInstance';
 import SEO from '../../components/SEO';
+import AdminLoader from '../../components/dashboard/AdminLoader';
+import { useAnalytics } from '../../hooks/useAnalytics';
 
 const Analytics = () => {
-  const { data, isLoading } = useQuery({
-    queryKey: ['admin-stats'],
-    queryFn: () => axiosInstance.get('/stats/dashboard').then(res => res.data)
-  });
+  const { data, isLoading } = useAnalytics();
 
-  if (isLoading) return <div className="p-20 text-center font-black">جاري تحليل البيانات...</div>;
+  if (isLoading) return <AdminLoader label="جاري تحميل التحليلات..." />;
 
   const specialtyData = transformSpecialtyData(data.appointmentsBySpecialty);
   const statusData = transformStatusData(data.statusStats);

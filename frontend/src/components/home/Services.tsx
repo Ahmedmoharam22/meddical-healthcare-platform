@@ -1,17 +1,6 @@
 import {
   ArrowLeft,
   Stethoscope,
-  Activity,
-  Heart,
-  Thermometer,
-  Microscope,
-  Syringe,
-  Baby,
-  Bone,
-  Eye,
-  Droplets,
-  FerrisWheel as Skin,
-  Pill,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import SectionHeader from "../common/SectionHeader";
@@ -21,9 +10,8 @@ import Loading from "../common/Loading";
 
 const Services = () => {
 const { services, isLoading } = useServices();
-  // ماب للأيقونات (نفس اللي عندك)
-  const iconMap: any = { /* ... */ };
 
+  
   if (isLoading) return <Loading />;
 
   return (
@@ -49,10 +37,13 @@ const { services, isLoading } = useServices();
           {services?.slice(0, 3).map((service) => (
             <div
               key={service._id}
-              className="group relative bg-white p-10 rounded-[32px] transition-all duration-500 hover:-translate-y-2 border-b-8 border-transparent hover:border-secondary shadow-[0_15px_40px_rgba(0,0,0,0.03)]"
+              className="group cursor-pointer relative bg-white p-10 rounded-[32px] transition-all duration-500 hover:-translate-y-2 border-b-8 border-transparent hover:border-secondary shadow-[0_15px_40px_rgba(0,0,0,0.03)]"
             >
               <div className="w-20 h-20 bg-accent/20 rounded-2xl flex items-center justify-center text-primary group-hover:bg-secondary group-hover:text-white group-hover:rotate-6 transition-all duration-500 mb-8">
-                {iconMap[service.icon] || <Stethoscope size={40} />}
+                {/* Only render emoji icons — skip plain text leftovers like "Stethoscope" */}
+                {service.icon && !/^[a-zA-Z]/.test(service.icon)
+                  ? <span className="text-4xl leading-none select-none">{service.icon}</span>
+                  : <Stethoscope size={40} />}
               </div>
 
               <h3 className="text-2xl text-primary font-bold mb-4">

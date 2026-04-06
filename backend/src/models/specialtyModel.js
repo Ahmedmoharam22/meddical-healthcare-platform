@@ -5,8 +5,7 @@ const specialtySchema = mongoose.Schema({
     description: { type: String },
     icon: { type: String },
     slug: { type: String, required: true, unique: true },
-    
-    
+    price: { type: Number, required: true, default: 0 },    
 }, { timestamps: true });
 
 const Specialty = mongoose.model('Specialty', specialtySchema);

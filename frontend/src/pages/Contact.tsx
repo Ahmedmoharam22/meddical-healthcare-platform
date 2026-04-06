@@ -1,11 +1,9 @@
-import React from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 
 import { Phone, MapPin, Clock, Send, MessageSquare, User, Smartphone, Mail, AlertCircle } from 'lucide-react';
 import { useSendMessage } from '../hooks/useMessages';
 import { contactSchema, type ContactInput } from '../utils/validations';
-import SectionHeader from '../components/common/SectionHeader';
 import SEO from '../components/SEO';
 
 const ContactPage = () => {

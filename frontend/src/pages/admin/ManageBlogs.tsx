@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { useBlogs } from '../../hooks/useBlogs'; // هكريتلك الهوك ده دلوقتي
+import { useBlogs } from '../../hooks/useBlogs';
 import { useForm } from 'react-hook-form';
 import { Plus, Trash2, Edit, FileText, Loader2, X, Eye, Image as ImageIcon } from 'lucide-react';
 import ConfirmModal from '../../components/shared/ConfirmModal';
 import { API_URL } from '../../api/axiosInstance';
+import AdminLoader from '../../components/dashboard/AdminLoader';
 
 
 const ManageBlogs = () => {
@@ -46,7 +47,7 @@ const ManageBlogs = () => {
     }
   };
 
-  if (isLoading) return <Loader2 className="animate-spin mx-auto mt-20 text-secondary" size={48} />;
+  if (isLoading) return <AdminLoader label="جاري تحميل المدونة..." />;
 
   return (
     <div className="p-6 space-y-8" dir="rtl">

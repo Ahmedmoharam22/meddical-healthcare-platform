@@ -1,7 +1,6 @@
-import React from 'react';
 import { Heart, Users, Target, Calendar, MapPin, Award } from 'lucide-react';
 import SEO from '../components/SEO';
-
+import banner1 from '../assets/banner1.jpg';
 const About = () => {
   return (
     <div className="font-cairo">
@@ -13,7 +12,7 @@ const About = () => {
       {/* 1. Hero Section: عنوان الصفحة */}
       <section className="relative py-24 bg-primary overflow-hidden">
         <div className="absolute inset-0 opacity-10">
-          <img src="/assets/pattern.png" alt="pattern" className="w-full h-full object-cover" />
+          <img src={banner1} alt="pattern" className="w-full h-full object-cover" />
         </div>
         <div className="container mx-auto px-4 relative z-10 text-center">
           <h1 className="text-display-2 md:text-display-1 text-white font-black mb-6">
@@ -31,13 +30,9 @@ const About = () => {
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="lg:w-1/2 relative">
               <div className="relative z-10 rounded-[40px] overflow-hidden shadow-2xl border-8 border-white">
-                <img src="/assets/about-charity.jpg" alt="Building" className="w-full h-[500px] object-cover" />
+                <img src={banner1} alt="Building" className="w-full  h-[500px] object-contain" />
               </div>
-              <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-accent/20 rounded-full blur-3xl -z-0"></div>
-              {/* Badge الافتتاح */}
-              <div className="absolute -top-6 -left-6 bg-secondary text-white p-8 rounded-full shadow-xl animate-bounce">
-                <p className="text-center font-bold text-sm leading-tight">الافتتاح<br/><span className="text-2xl">غداً</span></p>
-              </div>
+              <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-accent/20 rounded-full blur-3xl -z-0"></div>             
             </div>
 
             <div className="lg:w-1/2">

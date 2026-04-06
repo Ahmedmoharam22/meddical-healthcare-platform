@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { Home, AlertTriangle, ArrowRight } from 'lucide-react';
-import { motion } from 'framer-motion';
 import SEO from '../components/SEO';
 
 const NotFound = () => {
@@ -13,17 +12,14 @@ const NotFound = () => {
       />
       <div className="max-w-md w-full text-center">
         {/* أنيميشن للأيقونة */}
-        <motion.div 
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          transition={{ type: "spring", stiffness: 260, damping: 20 }}
-          className="flex justify-center mb-8"
+        <div 
+                  className="flex justify-center mb-8"
         >
           <div className="relative">
             <div className="absolute inset-0 bg-accent/20 blur-3xl rounded-full"></div>
             <AlertTriangle size={120} className="text-accent relative z-10" />
           </div>
-        </motion.div>
+        </div>
 
         <h1 className="text-8xl font-black text-primary mb-4">404</h1>
         <h2 className="text-2xl font-bold text-gray-800 mb-4">عذراً، الصفحة غير موجودة!</h2>

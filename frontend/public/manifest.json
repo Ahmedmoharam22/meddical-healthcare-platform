@@ -1,0 +1,47 @@
+{
+  "short_name": "مجمع النور",
+  "name": "مجمع النور الطبي - رعاية صحية متكاملة",
+  "id": "/",
+  "description": "تطبيق مجمع النور الطبي لحجز المواعيد والاستشارات الطبية.",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "logo192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "logo512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "screenshot-desktop.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "صفحة الأطباء على الكمبيوتر"
+    },
+    {
+      "src": "screenshot-mobile.png",
+      "sizes": "750x1334",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "تطبيق مجمع النور على الموبايل"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#297AFF",
+  "background_color": "#ffffff",
+  "orientation": "portrait"
+}

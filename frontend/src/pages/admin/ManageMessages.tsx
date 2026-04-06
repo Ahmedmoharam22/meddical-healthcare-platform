@@ -1,5 +1,6 @@
 import { useMessages } from '../../hooks/useMessages';
 import { Mail, Trash2, Phone, Calendar, MessageSquare } from 'lucide-react';
+import AdminLoader from '../../components/dashboard/AdminLoader';
 import { sendWhatsAppMessage } from '../../utils/whatsappService';
 import ConfirmModal from '../../components/shared/ConfirmModal';
 import { useState } from 'react';
@@ -11,7 +12,7 @@ const ManageMessages = () => {
   // الـ State الخاص بالمودال
   const [deleteId, setDeleteId] = useState<string | null>(null);
 
-  if (isLoading) return <div className="p-10 text-center font-black">جاري تحميل الرسائل...</div>;
+  if (isLoading) return <AdminLoader label="جاري تحميل الرسائل..." />;
 
   return (
     <div className="p-6 space-y-6" dir="rtl">
@@ -60,7 +61,7 @@ const ManageMessages = () => {
               </div>
             </div>
 
-            <div className="flex justify-end gap-2 mt-4 opacity-0 group-hover:opacity-100 transition-opacity">
+            <div className="flex justify-end gap-2 mt-4 transition-opacity">
               <button 
                 onClick={(e) => {
                   e.stopPropagation(); // عشان ميعملش Mark as Read لما تدوس هنا

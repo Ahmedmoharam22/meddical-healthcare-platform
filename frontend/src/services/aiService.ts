@@ -1,16 +1,4 @@
-// import { API_URL } from '../api/axiosInstance';
 
-// export const getBodyDiagnostics = async () => {
-//   const { data } = await API_URL.get('/diagnostics/symptoms');
-  
-//   // تحويل المصفوفة (Array) لـ Object عشان نعرف ننادي عليها بـ (head, chest..)
-//   return data.reduce((acc: any, item: any) => {
-//     acc[item.bodyPart] = item; // تأكد أن الحقل في الباك إند اسمه bodyPart
-//     return acc;
-//   }, {});
-// };
-
-// services/bodyService.ts
 import { API_URL } from '../api/axiosInstance'; 
 
 export const fetchDiagnostics = async () => {

@@ -1,9 +1,5 @@
-import { 
-  Brain, Bone, Eye, HeartPulse, Refrigerator as Stomach, 
-  Stethoscope, Activity, User, 
-  Ear, Droplets, Baby, ArrowLeft 
-} from 'lucide-react';
-import { Link } from 'react-router-dom'; // ضفنا الـ Link
+import { Stethoscope, ArrowLeft } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import Loading from '../common/Loading';
 import SectionHeader from '../common/SectionHeader';
 import { useSpecialties } from '../../hooks/useSpecialties';
@@ -11,19 +7,7 @@ import { useSpecialties } from '../../hooks/useSpecialties';
 const Specialties = () => {
   const { data: specialties, isLoading } = useSpecialties();
 
-  const iconMap: any = {
-    'brain': <Brain size={32} />,
-    'bone': <Bone size={32} />,
-    'eye': <Eye size={32} />,
-    'heart-beat': <HeartPulse size={32} />,
-    'stomach': <Stomach size={32} />,
-    'heart-pulse': <HeartPulse size={32} />,
-    'cancer': <Activity size={32} />,
-    'skin': <User size={32} />,
-    'ear': <Ear size={32} />,
-    'kidney': <Droplets size={32} />,
-    'uterus': <Baby size={32} />,
-  };
+
 
   if (isLoading) return <Loading />;
 
@@ -51,9 +35,11 @@ const Specialties = () => {
               key={index}
               className="group p-8 border border-gray-100 rounded-[32px] transition-all duration-500 hover:bg-primary hover:border-primary hover:shadow-2xl hover:-translate-y-3 flex flex-col items-center text-center cursor-pointer"
             >
-              {/* Icon Container */}
+              {/* Icon Container - icon field stores emoji directly */}
               <div className="w-20 h-20 bg-accent/20 text-primary rounded-[24px] flex items-center justify-center mb-6 group-hover:bg-white/10 group-hover:text-white group-hover:rotate-[15deg] transition-all duration-500">
-                {iconMap[spec.icon] || <Stethoscope size={32} />}
+                {spec.icon
+                  ? <span className="text-4xl leading-none select-none">{spec.icon}</span>
+                  : <Stethoscope size={32} />}
               </div>
 
               {/* Text */}

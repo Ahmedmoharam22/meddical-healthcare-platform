@@ -8,7 +8,7 @@ const Login = () => {
   const { login, isLoading } = useAuth();
   
   const { register, handleSubmit, formState: { errors } } = useForm({
-    resolver: zodResolver(loginSchema)
+    resolver: zodResolver(loginSchema)  
   });
 
   const onSubmit = (data: any) => {

@@ -9,7 +9,6 @@ const AddMedicineModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () =>
   const imageUrl = watch('image');
 
   const onSubmit = (data: any) => {
-    // تحويل القيم الرقمية لضمان عدم حدوث Validation Error في الباك إند
     const formattedData = {
       ...data,
       price: Number(data.price),

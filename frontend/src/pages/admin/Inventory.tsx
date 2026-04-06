@@ -7,6 +7,7 @@ import { useMedicines } from '../../hooks/useMedicines';
 import MedicineCard from '../../components/pharmacy/MedicineCard';
 import AddMedicineModal from '../../components/pharmacy/AddMedicineModal';
 import ConfirmModal from '../../components/shared/ConfirmModal';
+import AdminLoader from '../../components/dashboard/AdminLoader';
 
 const Inventory = () => {
   // 1. States المنطقية
@@ -30,12 +31,7 @@ const Inventory = () => {
   // 4. إحصائيات سريعة (Top Stats)
   const lowStockCount = medicines?.filter((m: any) => m.stock <= (m.minThreshold || 10)).length;
 
-  if (isLoading) return (
-    <div className="h-screen w-full flex flex-col items-center justify-center gap-4 bg-[#F8FAFC]">
-      <Loader2 className="animate-spin text-primary" size={48} />
-      <p className="font-bold text-primary animate-pulse">جاري تحميل المخزن...</p>
-    </div>
-  );
+  if (isLoading) return <AdminLoader label="جاري تحميل المخزن..." />;
 
   return (
     <div className="p-6 lg:p-10 bg-[#F8FAFC] min-h-screen font-cairo" dir="rtl">

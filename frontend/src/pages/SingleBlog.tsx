@@ -1,9 +1,8 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useSingleBlog } from '../hooks/useBlogs';
 import { Calendar, User, ArrowRight, Share2, Clock, ChevronLeft, Layout } from 'lucide-react';
 import Loading from '../components/common/Loading';
-import { API_URL } from '../api/axiosInstance';
 import SEO from '../components/SEO';
 
 

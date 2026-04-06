@@ -1,7 +1,7 @@
 interface LogoProps {
   className?: string;
-  textColor?: string; // للتحكم في لون كلمة "مجمع النور"
-  showText?: boolean; // لو عايز تظهر الأيقونة بس في بعض الأماكن
+  textColor?: string; 
+  showText?: boolean; 
 }
 
 const Logo = ({ className = "", textColor = "text-primary", showText = true }: LogoProps) => {

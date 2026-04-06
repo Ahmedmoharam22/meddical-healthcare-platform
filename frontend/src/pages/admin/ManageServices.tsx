@@ -5,6 +5,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { serviceSchema, type ServiceFormData } from '../../schemas/serviceSchema';
 import ConfirmModal from '../../components/shared/ConfirmModal';
 import { useState } from 'react';
+import AdminLoader from '../../components/dashboard/AdminLoader';
 
 const ServicesManager = () => {
     const { services, isLoading, createService, deleteService, updateService, isCreating, isUpdating } = useServices();
@@ -42,11 +43,11 @@ const ServicesManager = () => {
     const openEditModal = (service: any) => {
         setIsEditMode(true);
         setSelectedService(service);
-        reset({ name: service.name, description: service.description });
+        reset({ name: service.name, description: service.description, icon: service.icon || '' });
         setIsFormModalOpen(true);
     };
 
-    if (isLoading) return <div className="flex justify-center mt-20"><Loader2 className="animate-spin text-blue-600" size={40} /></div>;
+    if (isLoading) return <AdminLoader label="جاري تحميل الخدمات..." />;
 
     return (
         <div className="p-8 font-cairo text-right" dir="rtl">
@@ -65,6 +66,7 @@ const ServicesManager = () => {
                 <table className="w-full min-w-[500px]">
                     <thead className="bg-slate-50">
                         <tr>
+                            <th className="p-5 text-slate-600 font-bold">الأيقونة</th>
                             <th className="p-5 text-slate-600 font-bold">اسم الخدمة</th>
                             <th className="p-5 text-slate-600 font-bold text-center">الإجراءات</th>
                         </tr>
@@ -72,6 +74,7 @@ const ServicesManager = () => {
                     <tbody>
                         {services?.map((service: any) => (
                             <tr key={service._id} className="border-t border-slate-50 hover:bg-slate-50/50 transition-all">
+                                <td className="p-5 text-3xl">{service.icon || '🩺'}</td>
                                 <td className="p-5 font-bold text-slate-700">{service.name}</td>
                                 <td className="p-5 flex justify-center gap-2">
                                     <button onClick={() => openEditModal(service)} className="p-2 cursor-pointer text-blue-500 hover:bg-blue-50 rounded-lg"><Edit2 size={18} /></button>
@@ -101,6 +104,20 @@ const ServicesManager = () => {
                                 <label className="block text-sm font-bold mb-2">الاسم</label>
                                 <input {...register('name')} className="w-full p-4 bg-slate-50 rounded-xl outline-none focus:ring-2 focus:ring-blue-500" />
                                 {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name.message}</p>}
+                            </div>
+                            <div>
+                                <label className="block text-sm font-bold mb-2">أيقونة الخدمة (Emoji)</label>
+                                <div className="flex items-center gap-3">
+                                    <span className="text-4xl w-16 h-16 bg-slate-50 rounded-xl flex items-center justify-center border-2 border-slate-100">
+                                        {/* preview */}
+                                    </span>
+                                    <input
+                                        {...register('icon')}
+                                        className="flex-1 p-4 bg-slate-50 rounded-xl outline-none focus:ring-2 focus:ring-secondary/30 font-bold text-lg"
+                                        placeholder="🩺"
+                                    />
+                                </div>
+                                <p className="text-[10px] text-gray-400 font-bold mt-1">الصق أي Emoji من الكيبورد (Windows: Win+.) أو من الإنترنت</p>
                             </div>
                             <div>
                                 <label className="block text-sm font-bold mb-2">الوصف</label>

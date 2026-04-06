@@ -14,7 +14,8 @@ import aiRoutes from './routes/aiRoutes.js';
 import diagnosticRoutes from './routes/diagnosticRoutes.js';
 import medicineRoutes from './routes/medicineRoutes.js';
 import scheduleRoutes from './routes/scheduleRoutes.js';
-
+import bookingRoutes from './routes/bookingRoutes.js';
+import webhookRoutes from './routes/webhookRoutes.js';
 
 dotenv.config();    
 
@@ -40,6 +41,8 @@ app.use('/api/ai', aiRoutes);
 app.use('/api/diagnostics', diagnosticRoutes);
 app.use('/api/medicines', medicineRoutes);  
 app.use('/api/schedules', scheduleRoutes);  
+app.use('/api/bookings', bookingRoutes);
+app.use('/api/webhooks', webhookRoutes);
 
 
 export default app;
