@@ -25,6 +25,7 @@ An advanced medical management platform designed for high-efficiency clinics and
 - **Forms:** React Hook Form & Zod Validation.
 - **Styling:** Tailwind CSS & Framer Motion (Transitions).
 - **Icons:** Lucide React.
+- **Animations:** Framer Motion (Transitions).
 - **HTTP Client:** Axios (With Interceptors for Auth).
 
 ## 📁 (Project Structure)
