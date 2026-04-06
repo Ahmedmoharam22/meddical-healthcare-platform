@@ -7,7 +7,6 @@ interface LogoProps {
 const Logo = ({ className = "", textColor = "text-primary", showText = true }: LogoProps) => {
   return (
     <div className={`flex items-center gap-3 ${className}`}>
-      {/* الـ SVG اللي أنت اخترته */}
       <svg 
         width="40" 
         height="40" 

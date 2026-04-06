@@ -95,7 +95,6 @@ interface DoctorModalProps {
 }
 
 const DoctorModal = ({ doctor, onClose }: DoctorModalProps) => {
-  // 1. منع الـ scroll للصفحة اللي ورا طول ما المودال مفتوح
   useEffect(() => {
     if (doctor) {
       document.body.style.overflow = "hidden";

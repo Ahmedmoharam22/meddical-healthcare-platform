@@ -14,7 +14,7 @@ const Loading = () => {
       {/* Modern Text Animation */}
       <div className="flex flex-col items-center gap-1">
         <h3 className="text-title text-primary font-bold animate-pulse">
-          مجمع النور الطبي
+          مجمع النور 
         </h3>
         <p className="text-small text-gray-400 tracking-[0.2em] font-medium">
           جاري التحميل...
