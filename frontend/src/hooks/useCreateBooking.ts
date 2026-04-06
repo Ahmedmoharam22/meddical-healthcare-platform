@@ -15,7 +15,7 @@ export const useCreateBooking = () => {
     onSuccess: (data) => {
       // 1. لو المريض اختار دفع أونلاين، الباك إند باعت لنا "url"
       if (data.success && data.url) {
-        toast.loading("جاري تحويلك لصفحة الدفع الآمنة...");
+        toast.success("تم الحجز بنجاح! جاري تحويلك لصفحة الدفع الآمنة...");
         // تحويل المتصفح بالكامل لصفحة Stripe Checkout
         window.location.href = data.url;
       } 
@@ -33,4 +33,4 @@ export const useCreateBooking = () => {
       console.error("Booking Mutation Error:", error);
     },
   });
-};
+};// Added loading state logic
