@@ -21,6 +21,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }: PaginationProps) 
     }
   };
 
+  // testing co-authoring 
   // Helper logic to show limited page numbers (e.g. max 5 pages visible around current)
   // For simplicity, we show a few pages around the current page
   const getPageNumbers = () => {
