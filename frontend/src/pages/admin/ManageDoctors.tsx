@@ -92,7 +92,7 @@ const ManageDoctors = () => {
               <tr key={doc._id} className="hover:bg-blue-50/30 transition-colors group">
                 <td className="p-6 flex items-center gap-4">
                   <div className="w-14 h-14 bg-accent/10 rounded-2xl overflow-hidden border-2 border-white shadow-sm flex items-center justify-center text-secondary">
-                    {doc.image ? <img src={`http://localhost:5000/uploads/${doc.image}`} className="w-full h-full object-cover" /> : <Stethoscope size={24}/>}
+                    {doc.image ? <img src={`http://localhost:5000/uploads/${doc.image}`} className="w-full h-full object-cover" alt={doc.name} loading="lazy" /> : <Stethoscope size={24}/>}
                   </div>
                   <div>
                     <p className="font-black text-primary text-lg leading-tight">{doc.name}</p>
@@ -148,7 +148,7 @@ const ManageDoctors = () => {
                 <div className="relative group cursor-pointer border-2 border-dashed border-gray-200 rounded-[25px] p-4 hover:bg-secondary/5 hover:border-secondary transition-all">
                   <div className="flex items-center gap-5">
                     <div className="w-20 h-20 bg-white rounded-2xl overflow-hidden border-2 border-gray-100 flex items-center justify-center">
-                      {previewImage ? <img src={`http://localhost:5000${previewImage}`} className="w-full h-full object-cover" /> : <Plus className="text-gray-300" size={28} />}
+                      {previewImage ? <img src={`http://localhost:5000${previewImage}`} className="w-full h-full object-cover" alt="Preview" loading="lazy" /> : <Plus className="text-gray-300" size={28} />}
                     </div>
                     <div>
                         <p className="text-primary font-black text-sm">{previewImage ? 'تغيير الصورة' : 'ارفع صورة'}</p>

@@ -94,6 +94,7 @@ const DoctorsPage = () => {
                   <img 
                     src={`http://localhost:5000/uploads/${doc.image}`} 
                     alt={doc.name}
+                    loading="lazy"
                     className="w-full h-full object-cover grayscale-[0.5] group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110"
                   />
                   <div className="absolute top-5 right-5 bg-white/90 backdrop-blur-md px-4 py-2 rounded-2xl flex items-center gap-2 shadow-sm">

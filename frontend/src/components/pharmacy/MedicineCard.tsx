@@ -12,6 +12,7 @@ const MedicineCard = ({ medicine }: MedicineProps) => {
         <img 
           src={medicine.image} 
           alt={medicine.name} 
+          loading="lazy"
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
         />
         <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold text-primary shadow-sm">

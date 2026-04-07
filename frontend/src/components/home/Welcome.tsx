@@ -31,6 +31,7 @@ const Welcome = () => {
           <img 
             src={welcomeImage} 
             alt="فريق مجمع النور الطبي" 
+            loading="lazy"
             className="w-full h-auto object-cover max-h-[500px]"
           />
         </div>

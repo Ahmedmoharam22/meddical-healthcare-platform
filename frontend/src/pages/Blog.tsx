@@ -81,6 +81,7 @@ const BlogPage = () => {
                     src={`http://localhost:5000/uploads/${post.image}`} 
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
                     alt={post.title} 
+                    loading="lazy"
                   />
                   <div className="absolute top-6 right-6 bg-white/90 backdrop-blur-md px-4 py-2 rounded-xl text-primary font-black text-xs">
                      {post.category || 'ثقافة طبية'}

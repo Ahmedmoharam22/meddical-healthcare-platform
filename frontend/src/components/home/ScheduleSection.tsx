@@ -71,6 +71,7 @@ const ScheduleSection = () => {
                         <img 
                           src={`http://localhost:5000/uploads/${item.doctor.image}`} 
                           alt={item.doctor.name} 
+                          loading="lazy"
                           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
                         />
                       </div>

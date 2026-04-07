@@ -2,12 +2,10 @@ import { useState } from "react";
 import { Search, Clock, PhoneCall, MapPin, Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import Logo from "../common/Logo";
-import { useAuth } from "../../hooks/useAuth";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { pathname } = useLocation();
-  const { user } = useAuth();
 
   const navLinks = [
     { name: "الرئيسية", path: "/" },
@@ -21,7 +19,7 @@ const Navbar = () => {
   ];
 
   return (
-    <header className={`w-full flex flex-col font-cairo shadow-sm fixed ${user?.role === 'admin' ? "top-8 sm:top-10" : "top-0"} z-[100]`} dir="rtl">
+    <header className={`w-full flex flex-col font-cairo shadow-sm z-[100]`} dir="rtl">
       {/* 1. Top Header - مخفي في الموبايل الصغير جداً لتحسين المساحة */}
       <div className="bg-white py-3 border-b border-gray-100 hidden lg:block">
         <div className="container mx-auto px-4 flex items-center justify-between">

@@ -70,7 +70,7 @@ const ManageBlogs = () => {
           <div key={blog._id} className="bg-white rounded-[40px] overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all group relative">
             {/* Image Section */}
             <div className="h-56 relative overflow-hidden">
-              <img src={`http://localhost:5000/uploads/${blog.image}`} alt={blog.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+              <img src={`http://localhost:5000/uploads/${blog.image}`} alt={blog.title} loading="lazy" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
               <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-4 py-1.5 rounded-full text-secondary font-black text-xs shadow-sm">
                 {blog.category}
               </div>
@@ -133,7 +133,7 @@ const ManageBlogs = () => {
                 <div>
                   <label className="block text-sm font-black mb-2 text-primary">صورة الغلاف</label>
                   <div className="relative h-[56px] bg-gray-50 rounded-2xl border-2 border-dashed border-gray-200 flex items-center justify-center group hover:border-secondary transition-all">
-                    {previewImage ? <img src={`http://localhost:5000${previewImage}`} className="h-full w-full object-cover rounded-2xl" /> : <ImageIcon className="text-gray-300" />}
+                    {previewImage ? <img src={`http://localhost:5000${previewImage}`} alt="Preview" loading="lazy" className="h-full w-full object-cover rounded-2xl" /> : <ImageIcon className="text-gray-300" />}
                     <input type="file" {...register('image')} onChange={(e) => { register('image').onChange(e); setPreviewImage(URL.createObjectURL(e.target.files![0])) }} className="absolute inset-0 opacity-0 cursor-pointer" accept="image/*" />
                   </div>
                 </div>

@@ -1,36 +1,38 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import MainLayout from './components/layout/MainLayout';
-import Home from './pages/Home';
-import ServiceDetails from './pages/ServiceDetails';
-import About from './pages/About';
-import Service from './pages/Services';
-import Specialties from './pages/Specialties';
-import SpecialtyDetails from './pages/SpecialtyDetails';
-import Doctors from './pages/Doctors';
-import Blog from './pages/Blog';
-import SingleBlog from './pages/SingleBlog';
-import Contact from './pages/Contact';
-import ProtectedRoute from './admin/ProtectedRoute';
-import Login from './pages/auth/Login';
-import AdminLayout from './components/layout/AdminLayout';
-import ManageDoctors from './pages/admin/ManageDoctors';
-import ManageSpecialties from './pages/admin/ManageSpecialties';
-import ManageBlogs from './pages/admin/ManageBlogs';
-import ManageAppointments from './pages/admin/ManageAppointments';
-import ManageMessages from './pages/admin/ManageMessages';
-import Analytics from './pages/dashboard/Analytics';
-import InteractiveBody from './components/InteractiveBody';
-import ManageServices from './pages/admin/ManageServices';
-import ScrollToTop from './components/common/ScrollToTop';
-import NotFound from './pages/NotFound';
-import BookAppointment from './pages/BookAppointment';
-import Inventory from './pages/admin/Inventory';
-import RegisterAdmin from './pages/auth/RegisterAdmin';
-import PharmacyInventory from './pages/PharmacyInventory';
-import ManageSchedule from './pages/admin/ManageSchedule';
-import PaymentSuccess from './pages/payments/PaymentSuccess';
-import PaymentFailed from './pages/payments/PaymentFailed';
-import DashboardOverview from './pages/admin/DashboardOverview';
+import { lazy, Suspense } from 'react';
+import Loading from './components/common/Loading';
+const MainLayout = lazy(() => import('./components/layout/MainLayout'));
+const Home = lazy(() => import('./pages/Home'));
+const ServiceDetails = lazy(() => import('./pages/ServiceDetails'));
+const About = lazy(() => import('./pages/About'));
+const Service = lazy(() => import('./pages/Services'));
+const Specialties = lazy(() => import('./pages/Specialties'));
+const SpecialtyDetails = lazy(() => import('./pages/SpecialtyDetails'));
+const Doctors = lazy(() => import('./pages/Doctors'));
+const Blog = lazy(() => import('./pages/Blog'));
+const SingleBlog = lazy(() => import('./pages/SingleBlog'));
+const Contact = lazy(() => import('./pages/Contact'));
+const ProtectedRoute = lazy(() => import('./admin/ProtectedRoute'));
+const Login = lazy(() => import('./pages/auth/Login'));
+const AdminLayout = lazy(() => import('./components/layout/AdminLayout'));
+const ManageDoctors = lazy(() => import('./pages/admin/ManageDoctors'));
+const ManageSpecialties = lazy(() => import('./pages/admin/ManageSpecialties'));
+const ManageBlogs = lazy(() => import('./pages/admin/ManageBlogs'));
+const ManageAppointments = lazy(() => import('./pages/admin/ManageAppointments'));
+const ManageMessages = lazy(() => import('./pages/admin/ManageMessages'));
+const Analytics = lazy(() => import('./pages/dashboard/Analytics'));
+const InteractiveBody = lazy(() => import('./components/InteractiveBody'));
+const ManageServices = lazy(() => import('./pages/admin/ManageServices'));
+const ScrollToTop = lazy(() => import('./components/common/ScrollToTop'));
+const NotFound = lazy(() => import('./pages/NotFound'));
+const BookAppointment = lazy(() => import('./pages/BookAppointment'));
+const Inventory = lazy(() => import('./pages/admin/Inventory'));
+const RegisterAdmin = lazy(() => import('./pages/auth/RegisterAdmin'));
+const PharmacyInventory = lazy(() => import('./pages/PharmacyInventory'));
+const ManageSchedule = lazy(() => import('./pages/admin/ManageSchedule'));
+const PaymentSuccess = lazy(() => import('./pages/payments/PaymentSuccess'));
+const PaymentFailed = lazy(() => import('./pages/payments/PaymentFailed'));
+const DashboardOverview = lazy(() => import('./pages/admin/DashboardOverview'));
 
 function App() {
   return (
@@ -38,6 +40,7 @@ function App() {
 
 <Router>
 <ScrollToTop />
+<Suspense fallback={<Loading className="h-screen flex items-center justify-center bg-white text-primary font-bold" />}>
   <Routes>
     {/* 1. روابط المستخدم العادي (MainLayout) */}
     <Route element={<MainLayout />}>
@@ -90,9 +93,9 @@ function App() {
       </Route>
     </Route>
 
-    {/* صفحة 404 (اختياري) */}
-    <Route path="*" element={<div>404 - الصفحة غير موجودة</div>} />
+    <Route path="*" element={<NotFound />} />
   </Routes>
+</Suspense>
 </Router>
   );
 }

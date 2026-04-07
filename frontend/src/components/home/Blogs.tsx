@@ -35,6 +35,7 @@ const News = () => {
                 <img 
                   src={`http://localhost:5000/uploads/${blogs[0].image}`} 
                   alt={blogs[0].title}
+                  loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute top-6 right-6 bg-secondary text-white px-5 py-1.5 rounded-full text-sm font-bold shadow-lg">
@@ -75,6 +76,7 @@ const News = () => {
                     src={`http://localhost:5000/uploads/${blog.image}`} 
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
                     alt={blog.title} 
+                    loading="lazy"
                   />
                 </div>
                 <div className="flex flex-col gap-1 py-1">

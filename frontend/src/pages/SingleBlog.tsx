@@ -80,6 +80,7 @@ const SingleBlog = () => {
                   src={post.image?.startsWith('http') ? post.image : `http://localhost:5000/uploads/${post.image}`} 
                   className="w-full h-full object-cover" 
                   alt={post.title} 
+                  loading="lazy"
                 />
               </div>
               
@@ -131,7 +132,7 @@ const SingleBlog = () => {
                   {[1, 2, 3].map((item) => (
                     <div key={item} className="group flex gap-4 items-center cursor-pointer">
                       <div className="w-20 h-20 bg-gray-100 rounded-[20px] overflow-hidden shrink-0 border border-gray-50">
-                        <img src={`https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=200&sig=${item}`} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="" />
+                        <img src={`https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=200&sig=${item}`} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Related Medical Resource" loading="lazy" />
                       </div>
                       <div>
                         <h4 className="font-black text-primary text-sm group-hover:text-secondary transition-colors line-clamp-2 leading-snug">

@@ -10,7 +10,7 @@ export const useAuth = () => {
   const loginMutation = useMutation({
     mutationFn: async (credentials: any) => {
       // ملحوظة: اتأكد من المسار /users/login أو /auth/login حسب الباك إند عندك
-      const { data } = await axiosInstance.post('/auth/login', credentials);
+      const { data } = await axiosInstance.post('/users/login', credentials);
       return data;
     },
     onSuccess: (data) => {
@@ -32,7 +32,7 @@ export const useAuth = () => {
   const registerMutation = useMutation({
     mutationFn: async (adminData: any) => {
       // بيبعت الاسم، الإيميل، الباسورد، الـ role، والـ secretKey
-      const { data } = await axiosInstance.post('/auth/register', adminData);
+      const { data } = await axiosInstance.post('/users/register', adminData);
       return data;
     },
     onSuccess: () => {

@@ -84,7 +84,7 @@ const AddMedicineModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () =>
             <div className="bg-gray-50 rounded-3xl p-4 flex flex-col items-center justify-center border-2 border-dashed border-gray-200 gap-3">
               <div className="w-full aspect-square bg-white rounded-2xl overflow-hidden flex items-center justify-center border border-gray-100">
                 {imageUrl ? (
-                  <img src={imageUrl} alt="Preview" className="w-full h-full object-cover" />
+                  <img src={imageUrl} alt="Preview" loading="lazy" className="w-full h-full object-cover" />
                 ) : (
                   <ImageIcon className="text-gray-200" size={48} />
                 )}

@@ -23,7 +23,7 @@ const About = () => {
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="lg:w-1/2 relative">
               <div className="relative z-10 rounded-[40px] overflow-hidden shadow-2xl border-8 border-white">
-                <img src={banner1} alt="Building" className="w-full  h-[500px] object-contain" />
+                <img src={banner1} alt="Building" loading="lazy" className="w-full  h-[500px] object-contain" />
               </div>
               <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-accent/20 rounded-full blur-3xl -z-0"></div>             
             </div>

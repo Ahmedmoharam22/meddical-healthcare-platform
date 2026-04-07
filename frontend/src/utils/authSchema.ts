@@ -7,5 +7,5 @@ export const loginSchema = z.object({
 
 export const registerSchema = loginSchema.extend({
   name: z.string().min(3, "الاسم مطلوب"),
-  secretKey: z.string().min(1, "مفتاح التسجيل مطلوب"), 
+  // secretKey: z.string().min(1, "مفتاح التسجيل مطلوب"), 
 });

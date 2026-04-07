@@ -135,6 +135,7 @@ const DoctorModal = ({ doctor, onClose }: DoctorModalProps) => {
                   src={`http://localhost:5000/uploads/${doctor.image}`} 
                   className="w-44 h-44 md:w-56 md:h-56 rounded-[40px] md:rounded-[55px] object-cover border-[10px] border-site-bg shadow-xl"
                   alt={doctor.name}
+                  loading="lazy"
                 />
                 <div className="absolute -bottom-4 right-1/2 translate-x-1/2 lg:translate-x-0 lg:right-4 bg-secondary text-white px-6 py-2 rounded-2xl text-sm font-black shadow-lg flex items-center gap-2">
                   <Award size={18} />

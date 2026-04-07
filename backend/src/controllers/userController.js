@@ -8,12 +8,12 @@ const generateToken = (id) => {
 
 // @desc    تسجيل مستخدم جديد (Admin/Doctor)
 export const registerUser = async (req, res) => {
-  const { name, email, password, role, secretKey } = req.body;
+  const { name, email, password, role } = req.body;
 
-  // حماية: الـ Register في الداشبورد لازم يتم بـ Secret Key
-  if (secretKey !== process.env.ADMIN_REGISTRATION_KEY) {
-    return res.status(401).json({ message: "مفتاح التسجيل السري غير صحيح" });
-  }
+  // // حماية: الـ Register في الداشبورد لازم يتم بـ Secret Key
+  // if (secretKey !== process.env.ADMIN_REGISTRATION_KEY) {
+  //   return res.status(401).json({ message: "مفتاح التسجيل السري غير صحيح" });
+  // }
 
   const userExists = await User.findOne({ email });
   if (userExists) return res.status(400).json({ message: "هذا البريد مسجل بالفعل" });

@@ -35,6 +35,7 @@ const ServiceDetails = () => {
             src={service.image || "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80"} 
             className="w-full h-full object-cover" 
             alt={service.name} 
+            loading="lazy"
           />
           <div className="absolute inset-0 bg-gradient-to-l from-primary/95 to-primary/60"></div>
         </div>
@@ -64,6 +65,7 @@ const ServiceDetails = () => {
               <img 
                 src={service.image || "https://images.unsplash.com/photo-1576091160550-2173dbc999ef?q=80"} 
                 alt={service.name} 
+                loading="lazy"
                 className="w-full h-[450px] object-cover rounded-[30px]"
               />
             </div>

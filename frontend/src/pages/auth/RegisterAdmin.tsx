@@ -102,7 +102,7 @@ const RegisterAdmin = () => {
             </div>
 
             {/* السيكريت كي (Secret Key) */}
-            <div className="space-y-1 pt-2 border-t border-slate-50">
+            {/* <div className="space-y-1 pt-2 border-t border-slate-50">
               <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest mr-2">مفتاح الحماية السري</label>
               <div className="relative">
                 <KeyRound className="absolute left-4 top-1/2 -translate-y-1/2 text-primary/40" size={18} />
@@ -114,7 +114,7 @@ const RegisterAdmin = () => {
                 />
               </div>
               {errors.secretKey && <span className="text-red-500 text-xs mr-2">{errors.secretKey.message as string}</span>}
-            </div>
+            </div> */}
 
             {/* زر الإرسال */}
             <button 

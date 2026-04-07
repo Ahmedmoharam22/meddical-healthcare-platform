@@ -52,7 +52,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-sm text-accent">الموقع</p>
-                    <p className="font-bold">المنصورة، المشاية السفلية</p>
+                    <p className="font-bold"> المحمودية، دكرنس، الدقهلية</p>
                   </div>
                 </div>
               </div>

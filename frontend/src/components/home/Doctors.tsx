@@ -39,7 +39,7 @@ const Doctors = () => {
             <div key={doc._id} className="group relative bg-white rounded-[32px] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3">
               {/* ... باقي كود الكارد زي ما هو ... */}
               <div className="relative h-[350px] overflow-hidden">
-                <img src={`http://localhost:5000/uploads/${doc.image}`} alt={doc.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <img src={`http://localhost:5000/uploads/${doc.image}`} alt={doc.name} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-primary/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
                    <a href="#" className="w-10 h-10 bg-white text-primary rounded-full flex items-center justify-center hover:bg-secondary hover:text-white transition-all"><Facebook size={20} /></a>
                    <a href="#" className="w-10 h-10 bg-white text-primary rounded-full flex items-center justify-center hover:bg-secondary hover:text-white transition-all"><Instagram size={20} /></a>
