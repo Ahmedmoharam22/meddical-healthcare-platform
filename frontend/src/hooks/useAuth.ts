@@ -16,10 +16,10 @@ export const useAuth = () => {
     onSuccess: (data) => {
       localStorage.setItem('adminToken', data.token);
       localStorage.setItem('adminUser', JSON.stringify(data));
-      
+
       // تحديث الهيدرز فوراً
       axiosInstance.defaults.headers.common['Authorization'] = `Bearer ${data.token}`;
-      
+
       toast.success(`أهلاً بك يا ${data.name} 👋`);
       navigate('/admin/dashboard');
     },
@@ -50,7 +50,7 @@ export const useAuth = () => {
     localStorage.removeItem('adminToken');
     localStorage.removeItem('adminUser');
     delete axiosInstance.defaults.headers.common['Authorization'];
-    
+
     toast.success('تم تسجيل الخروج بنجاح');
     navigate('/login', { replace: true });
   };
@@ -59,11 +59,11 @@ export const useAuth = () => {
     // تسجيل الدخول
     login: loginMutation.mutate,
     isLoginLoading: loginMutation.isPending,
-    
+
     // إنشاء حساب (التعديل الجديد)
     registerAdmin: registerMutation.mutate,
     isRegisterLoading: registerMutation.isPending,
-    
+
     // تسجيل الخروج
     logout
   };

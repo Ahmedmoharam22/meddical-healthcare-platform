@@ -2,10 +2,12 @@ import { useState } from "react";
 import { Search, Clock, PhoneCall, MapPin, Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import Logo from "../common/Logo";
+import { useAuth } from "../../hooks/useAuth";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { pathname } = useLocation();
+  const { user } = useAuth();
 
   const navLinks = [
     { name: "الرئيسية", path: "/" },
@@ -19,7 +21,7 @@ const Navbar = () => {
   ];
 
   return (
-    <header className="w-full flex flex-col font-cairo shadow-sm" dir="rtl">
+    <header className={`w-full flex flex-col font-cairo shadow-sm fixed ${user?.role === 'admin' ? "top-8 sm:top-10" : "top-0"} z-[100]`} dir="rtl">
       {/* 1. Top Header - مخفي في الموبايل الصغير جداً لتحسين المساحة */}
       <div className="bg-white py-3 border-b border-gray-100 hidden lg:block">
         <div className="container mx-auto px-4 flex items-center justify-between">
@@ -30,9 +32,9 @@ const Navbar = () => {
 
           {/* معلومات التواصل - مخفية تحت الـ 1024px */}
           <div className="flex items-center gap-8">
-            <InfoBlock icon={<PhoneCall size={20} />} title="الطوارئ" value="045-3612-255" color="text-red-500" />
+            <InfoBlock icon={<PhoneCall size={20} />} title="الطوارئ" value="050-222-8888" color="text-red-500" />
             <InfoBlock icon={<Clock size={20} />} title="ساعات العمل" value="09:00 - 20:00 يومياً" />
-            <InfoBlock icon={<MapPin size={20} />} title="موقعنا" value="المحمودية، البحيرة" />
+            <InfoBlock icon={<MapPin size={20} />} title="موقعنا" value="المحمودية، دكرنس" />
           </div>
         </div>
       </div>

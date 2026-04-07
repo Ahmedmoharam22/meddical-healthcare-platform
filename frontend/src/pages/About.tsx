@@ -1,6 +1,7 @@
 import { Heart, Users, Target, Calendar, MapPin, Award } from 'lucide-react';
 import SEO from '../components/SEO';
 import banner1 from '../assets/banner1.jpg';
+import PageHeader from '../components/common/PageHeader';
 const About = () => {
   return (
     <div className="font-cairo">
@@ -10,19 +11,11 @@ const About = () => {
         keywords="مجمع النور الطبي، المحمودية، ميت فارس، عرب شراويد، مبادرة خيرية، طب، صحة، أطباء متطوعين"
       />
       {/* 1. Hero Section: عنوان الصفحة */}
-      <section className="relative py-24 bg-primary overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <img src={banner1} alt="pattern" className="w-full h-full object-cover" />
-        </div>
-        <div className="container mx-auto px-4 relative z-10 text-center">
-          <h1 className="text-display-2 md:text-display-1 text-white font-black mb-6">
-            قصة صرح طبي.. <span className="text-secondary">بُني بالحب</span>
-          </h1>
-          <p className="text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
-            من قلب "المحمودية" وبسواعد أهل الخير، وُلد مجمع النور الطبي ليكون منارة للشفاء تخدم أهالينا من ميت فارس وحتى عرب شراويد.
-          </p>
-        </div>
-      </section>
+     <PageHeader 
+  title="خدمات مجمع النور"
+  subtitle="رعاية صحية بقلب خيري"
+  description="نجمع بين كفاءة الأطباء وأحدث التجهيزات لنقدم لكم خدمة طبية تليق بأهالينا في المحمودية."
+/>
 
       {/* 2. القصة والأصل (Story Section) */}
       <section className="py-20 bg-white">

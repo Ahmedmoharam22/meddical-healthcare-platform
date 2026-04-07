@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { Pill, Search, ShieldCheck, Zap } from 'lucide-react';
 import { useMedicines } from '../hooks/useMedicines';
-
+import Loading from '../components/common/Loading';
+import PageHeader from '../components/common/PageHeader';
 const Pharmacy = () => {
   const { medicinesQuery } = useMedicines();
   const { data: medicines, isLoading } = medicinesQuery;
   const [searchTerm, setSearchTerm] = useState('');
 
-  if (isLoading) return <div className="p-20 text-center font-bold text-primary animate-pulse font-cairo">جاري تحميل قائمة الأدوية...</div>;
+  if (isLoading) return <Loading />
 
   const filteredMedicines = medicines?.filter((med: any) => 
     med.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
@@ -18,9 +19,8 @@ const Pharmacy = () => {
     <div className="min-h-screen bg-[#F8FAFC] pb-24 font-cairo" dir="rtl">
       
       {/* Hero Section */}
-      <div className="bg-primary pt-16 pb-24 px-4 text-center text-white relative overflow-hidden">
+      {/* <div className="bg-primary pt-16 pb-24 px-4 text-center text-white relative overflow-hidden">
          <div className="absolute inset-0 bg-white/5"></div>
-         {/* Decorative circles */}
          <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4"></div>
          <div className="absolute bottom-0 left-0 w-64 h-64 bg-accent/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/4"></div>
          
@@ -31,7 +31,12 @@ const Pharmacy = () => {
               استعرض كافة الأدوية المتوفرة في مستودعاتنا المركزية. دقة، أمان، وتوافر على مدار الساعة.
             </p>
          </div>
-      </div>
+      </div> */}
+      <PageHeader 
+        title="الصيدلية المتكاملة"
+        subtitle="مجمع النور الطبي"
+        description="نجمع بين كفاءة الأطباء وأحدث الأدوية والمنتجات الطبية في المحمودية."
+      />
 
       <div className="container mx-auto px-4 -mt-12 relative z-20">
          {/* Search Bar */}

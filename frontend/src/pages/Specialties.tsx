@@ -3,7 +3,7 @@ import { useSpecialties } from '../hooks/useSpecialties';
 import Loading from '../components/common/Loading';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
-
+import PageHeader from '../components/common/PageHeader';
 const Specialties = () => {
   const { data: specialties, isLoading } = useSpecialties();
 
@@ -16,20 +16,11 @@ const Specialties = () => {
         description="تعرف على قصة مجمع النور الطبي، من فكرة بسيطة إلى واقع يخدم أهالي المحمودية وميت فارس وعرب شراويد. مبادرة خيرية بخبرات طبية متكاملة."
         keywords="مجمع النور الطبي، المحمودية، ميت فارس، عرب شراويد، خدمات طبية، تخصصات طبية، مبادرة خيرية، صحة، طب"
       />
-      {/* Hero Section - واجهة تليق بصرح المحمودية الطبي */}
-      <section className="bg-primary pt-32 pb-20 relative overflow-hidden">
-        <div className="container mx-auto px-4 relative z-10">
-          <h1 className="text-display-3 md:text-display-2 text-white font-black mb-6">
-            تخصصات مجمع النور <br/> 
-            <span className="text-secondary text-3xl md:text-5xl italic">نخبة من الأطباء في خدمتك</span>
-          </h1>
-          <p className="text-white/70 max-w-2xl text-lg leading-relaxed">
-            نوفر كافة التخصصات الطبية لخدمة أهالينا من ميت فارس وحتى عرب شراويد، مجهزين بأحدث التقنيات لضمان أدق التشخيصات.
-          </p>
-        </div>
-        {/* عنصر ديكوري خلفي */}
-        <div className="absolute -bottom-20 -left-20 w-96 h-96 bg-secondary/20 rounded-full blur-3xl"></div>
-      </section>
+      <PageHeader 
+        title="تخصصات مجمع النور"
+        subtitle=" من الأطباء المتميزين في المحمودية"
+        description="نوفر كافة التخصصات الطبية لخدمة أهالينا من ميت فارس وحتى عرب شراويد، مجهزين بأحدث التقنيات لضمان أدق التشخيصات."
+      />
 
       {/* قائمة التخصصات الكاملة */}
       <section className="py-24 container mx-auto px-4">

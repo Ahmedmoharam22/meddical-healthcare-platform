@@ -5,7 +5,7 @@ import { Phone, MapPin, Clock, Send, MessageSquare, User, Smartphone, Mail, Aler
 import { useSendMessage } from '../hooks/useMessages';
 import { contactSchema, type ContactInput } from '../utils/validations';
 import SEO from '../components/SEO';
-
+import PageHeader from '../components/common/PageHeader';
 const ContactPage = () => {
   const { mutate, isPending } = useSendMessage();
 
@@ -35,15 +35,12 @@ const ContactPage = () => {
         description="تواصل مع مجمع النور الطبي، احجز موعدك، أو أرسل استفساراتك لفريقنا الطبي المتخصص."
         keywords="تواصل معنا، حجز موعد، استفسارات طبية، مجمع النور الطبي، دعم فني"
       />
-      <section className="bg-primary pt-32 pb-24 relative overflow-hidden text-center">
-        <div className="container mx-auto px-4 relative z-10">
-          <h1 className="text-4xl md:text-6xl font-black text-white mb-6">تواصل معنا</h1>
-          <p className="text-white/70 max-w-2xl mx-auto text-lg leading-relaxed">
-            نسعد دائماً باستقبال استفساراتكم. طاقمنا الطبي والإداري جاهز لخدمتكم على مدار الساعة.
-          </p>
-        </div>
-        <div className="absolute top-0 left-0 w-96 h-96 bg-secondary/10 rounded-full blur-[120px]"></div>
-      </section>
+     <PageHeader 
+        title="تواصل معنا"
+        subtitle=" راحتك تهمنا تواصل معنا"
+        description="تواصل مع مجمع النور الطبي، احجز موعدك، أو أرسل استفساراتك لفريقنا الطبي المتخصص."
+
+  />
 
       <div className="container mx-auto px-4 -mt-16 relative z-20">
         <div className="flex flex-col lg:flex-row gap-10">

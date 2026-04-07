@@ -5,7 +5,7 @@ import { Search, Filter, Calendar, Clock, Award, Stethoscope } from 'lucide-reac
 import Loading from '../components/common/Loading';
 import DoctorModal from '../components/common/DoctorModal';
 import SEO from '../components/SEO';
-
+import PageHeader from '../components/common/PageHeader';
 const DoctorsPage = () => {
   const { data: doctors, isLoading: docsLoading } = useDoctors();
   const { data: specialties } = useSpecialties();
@@ -26,21 +26,17 @@ const DoctorsPage = () => {
   return (
     <div className="font-cairo bg-[#F8FAFC] min-h-screen pb-20">
       <SEO
-        title="أطباء مجمع النور الطبي - نخبة الاستشاريين والأخصائيين"
+       title="أطباء مجمع النور الطبي - نخبة الاستشاريين والأخصائيين"
         description="تعرف على نخبة أطباء مجمع النور الطبي، استشاريين وأخصائيين في مختلف التخصصات، واحجز موعدك اليوم."
         keywords="أطباء، استشاريين، أخصائيين، مجمع النور الطبي، طب، صحة، عيادات، تخصصات"
       />
 
       {/* 1. Hero Section */}
-      <section className="bg-primary pt-32 pb-20 text-white relative overflow-hidden">
-        <div className="container mx-auto px-4 relative z-10 text-center">
-          <h1 className="text-4xl md:text-6xl font-black mb-6 tracking-tight">نخبة أطباء مجمع النور</h1>
-          <p className="text-white/70 max-w-2xl mx-auto text-lg font-medium">
-            نضم مجموعة من أفضل الاستشاريين والأخصائيين الملتزمين بتقديم أعلى مستويات الرعاية الطبية بأحدث التقنيات.
-          </p>
-        </div>
-        <div className="absolute top-0 left-0 w-64 h-64 bg-secondary/20 rounded-full blur-[100px] -translate-x-1/2"></div>
-      </section>
+      <PageHeader 
+        title="أطباء مجمع النور"
+        subtitle="نخبة من الأطباء في خدمتك"
+        description="يضم مجمع النور نخبة من الأطباء والاستشاريين في مختلف التخصصات، الذين يجمعون بين الخبرة والكفاءة لتقديم أعلى مستوى من الرعاية الصحية لأهالي المحمودية وميت فارس وعرب شراويد."
+      />
 
       {/* 2. Filter Bar */}
       <div className="container mx-auto px-4 -mt-12 relative z-30">

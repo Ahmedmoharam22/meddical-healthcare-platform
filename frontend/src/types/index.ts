@@ -112,3 +112,9 @@ export interface Props {
   specialtyName: string;
   price: number;
 }
+
+export interface SectionHeaderProps {
+  title: string;
+  subtitle: string;
+  center?: boolean;
+}

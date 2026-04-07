@@ -3,7 +3,7 @@ import { useServices } from '../hooks/useServices';
 import Loading from '../components/common/Loading';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
-
+import PageHeader from '../components/common/PageHeader';
 const Services = () => {
   const { services, isLoading } = useServices();
 
@@ -16,17 +16,11 @@ const Services = () => {
         description="اكتشف خدمات مجمع النور الطبي الشاملة في المحمودية، من العيادات المتخصصة إلى الأجهزة الحديثة والخدمات الطبية المتميزة."
         keywords="خدمات طبية، مجمع النور الطبي، عيادات، أطباء، صحة، محمودية، خدمات خيرية"
       />
-      <section className="bg-primary pt-32 pb-20 relative overflow-hidden">
-        <div className="container mx-auto px-4 relative z-10">
-          <h1 className="text-display-3 md:text-display-2 text-white font-black mb-6 uppercase tracking-tighter">
-            خدمات مجمع النور <br/> <span className="text-secondary text-3xl md:text-5xl italic font-serif">رعاية صحية بقلب خيري</span>
-          </h1>
-          <p className="text-white/70 max-w-2xl text-lg leading-relaxed">
-            نجمع بين كفاءة الأطباء وأحدث التجهيزات لنقدم لكم خدمة طبية تليق بأهالينا في المحمودية.
-          </p>
-        </div>
-        <div className="absolute -bottom-20 -left-20 w-96 h-96 bg-secondary/20 rounded-full blur-3xl"></div>
-      </section>
+     <PageHeader 
+  title="خدمات مجمع النور"
+  subtitle="رعاية صحية بقلب خيري"
+  description="نجمع بين كفاءة الأطباء وأحدث التجهيزات لنقدم لكم خدمة طبية تليق بأهالينا في المحمودية."
+/>
 
       <section className="py-24 container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">

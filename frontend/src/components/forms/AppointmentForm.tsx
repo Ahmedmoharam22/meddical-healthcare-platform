@@ -117,18 +117,18 @@ const AppointmentForm = () => {
       {/* 8. الرسالة */}
       <div className="flex flex-col gap-1 md:col-span-2 relative group">
         <MessageSquare className="absolute right-4 top-4 text-gray-400" size={20} />
-        <textarea 
+        <textarea  
           {...register('message')}
           placeholder="ملاحظات إضافية"
           rows={3}
-          className="w-full bg-white border border-gray-100 p-4 pr-12 rounded-2xl outline-none focus:ring-2 focus:ring-secondary text-primary font-bold transition-all"
+          className=" resize-none w-full bg-white border border-gray-100 p-4 pr-12 rounded-2xl outline-none focus:ring-2 focus:ring-secondary text-primary font-bold transition-all"
         />
       </div>
 
       <button 
         type="submit"
         disabled={isPending}
-        className="md:col-span-2 cursor-pointer bg-secondary text-primary font-black py-5 rounded-2xl hover:bg-white border-2 border-transparent hover:border-secondary transition-all shadow-xl disabled:bg-gray-400 flex justify-center items-center gap-2"
+        className="md:col-span-2 cursor-pointer bg-secondary text-primary font-black py-5 rounded-2xl hover:bg-primary hover:text-white hover:border-secondary transition-all shadow-xl disabled:bg-gray-400 flex justify-center items-center gap-2"
       >
         {isPending ? 'جاري الحجز...' : 'تأكيد الحجز الآن'}
       </button>

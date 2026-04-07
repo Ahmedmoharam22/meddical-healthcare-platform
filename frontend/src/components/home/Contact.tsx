@@ -15,8 +15,8 @@ const Contact = () => {
 
   return (<>
     <section id="contact" className="py-24 bg-white font-cairo">
-       <SectionHeader title="تواصل معنا" className='mb-0 text-right' subtitle="تواصل معنا" />
       <div className="container mx-auto px-4">
+       <SectionHeader subtitle="تواصل معنا للشكاوي والاقتراحات" className='mb-0 text-right' center={false} title="راحتك تهمنا" />
         <div className="max-w-6xl mx-auto bg-white rounded-[40px] shadow-2xl overflow-hidden flex flex-col lg:flex-row">
           
           {/* جانب المعلومات - الـ Dark Mode Style */}

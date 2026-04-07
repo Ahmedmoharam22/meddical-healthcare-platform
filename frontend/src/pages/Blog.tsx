@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { useBlogs } from '../hooks/useBlogs'; 
 import Loading from '../components/common/Loading';
 import SEO from '../components/SEO';
+import PageHeader from '../components/common/PageHeader';
 
 const categories = ["الكل", "نصائح طبية", "جراحة", "تغذية", "أخبار المجمع"];
 
@@ -29,15 +30,11 @@ const BlogPage = () => {
         keywords="مدونة طبية، نصائح صحية، أخبار مجمع النور، طب، صحة، مقالات طبية، توعية صحية"
       />
       {/* 1. Header Section */}
-      <section className="bg-primary pt-32 pb-24 relative overflow-hidden">
-        <div className="container mx-auto px-4 relative z-10 text-center">
-          <h1 className="text-4xl md:text-6xl font-black text-white mb-6">مدونة مجمع النور</h1>
-          <p className="text-white/70 max-w-2xl mx-auto text-lg leading-relaxed">
-            مقالات طبية موثوقة بإشراف نخبة من أطباء المجمع لنشر الوعي الصحي في مجتمعنا.
-          </p>
-        </div>
-        <div className="absolute top-0 right-0 w-96 h-96 bg-secondary/10 rounded-full blur-[120px]"></div>
-      </section>
+     <PageHeader 
+        title="مدونة مجمع النور"
+        subtitle="نصائح طبية من أطباء مجمع النور"
+        description="تابع أحدث المقالات الطبية والنصائح الصحية من أطباء مجمع النور، بالإضافة إلى أخبار المجمع."
+      />
 
       {/* 2. Search & Categories Bar */}
       <div className="container mx-auto px-4 -mt-12 relative z-20">
