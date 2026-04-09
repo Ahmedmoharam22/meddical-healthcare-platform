@@ -1,5 +1,5 @@
-import { ArrowLeft } from 'lucide-react'; // غيرنا السهم للشمال عشان العربي
-import welcomeImage from '../../assets/banner3.jpg'; 
+import { ArrowLeft } from 'lucide-react'; 
+import welcomeImage from '../../assets/banner3.webp'; 
 import { Link } from 'react-router-dom';
 
 const Welcome = () => {
@@ -31,7 +31,9 @@ const Welcome = () => {
           <img 
             src={welcomeImage} 
             alt="فريق مجمع النور الطبي" 
-            loading="lazy"
+            fetchPriority="high"
+            width="1200"
+            height="500"
             className="w-full h-auto object-cover max-h-[500px]"
           />
         </div>

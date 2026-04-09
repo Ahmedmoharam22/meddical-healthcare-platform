@@ -49,7 +49,6 @@ export const addDoctor = async (req, res) => {
     try {
         const doctorData = { ...req.body };
         
-        // لو فيه صورة مرفوعة، خد المسار بتاعها وحطه في الداتا
         if (req.file) {
             doctorData.image = req.file.filename;
         }

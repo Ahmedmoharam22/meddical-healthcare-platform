@@ -1,6 +1,6 @@
 import { Heart, Users, Target, Calendar, MapPin, Award } from 'lucide-react';
 import SEO from '../components/SEO';
-import banner1 from '../assets/banner1.jpg';
+import banner1 from '../assets/banner1.webp';
 import PageHeader from '../components/common/PageHeader';
 const About = () => {
   return (

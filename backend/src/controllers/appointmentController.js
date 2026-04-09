@@ -40,7 +40,6 @@ export const createAppointment = async (req, res) => {
 // @desc    Get all appointments with doctor info
 export const getAppointments = async (req, res) => {
     try {
-        // بنعمل populate عشان نجيب اسم الدكتور والتخصص مع الحجز
         const appointments = await Appointment.find({})
             .populate('doctor', 'name specialty')
             .sort({ appointmentDate: 1 }); 

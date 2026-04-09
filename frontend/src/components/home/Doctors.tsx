@@ -5,6 +5,7 @@ import Loading from '../common/Loading';
 import { Link } from 'react-router-dom';
 import DoctorModal from '../common/DoctorModal';
 import SectionHeader from '../common/SectionHeader';
+import DoctorProfileModal from '../common/DoctorProfileModal';
 
 const Doctors = () => {
   const { data: doctors, isLoading } = useDoctors();
@@ -62,9 +63,9 @@ const Doctors = () => {
           ))}
         </div>
 
-        <DoctorModal   
-          doctor={selectedDoctor} 
-          onClose={() => setSelectedDoctor(null)} 
+        <DoctorProfileModal   
+        doctor={selectedDoctor} 
+  onClose={() => setSelectedDoctor(null)} 
         />
       </div>
     </section>

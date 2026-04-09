@@ -1,16 +1,21 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { User, Phone, Calendar, CreditCard, Banknote, Loader2, ChevronLeft } from "lucide-react";
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements, CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import { useCreateBooking } from "../hooks/useCreateBooking";
 import { bookingSchema, type BookingFormData } from "../utils/bookingSchema";
 import InputField from "./forms/InputField";
 import PaymentCard from "./common/PaymentCard";
 import type { Props } from "../types";
 
+// Load Stripe outside of component lifecycle
+const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY || "pk_test_TYooMQauvdEDq54NiTphI7jx");
 
-
-const BookingForm = ({ doctorId, specialtyId, specialtyName, price }: Props) => {
-  const { mutate, isPending } = useCreateBooking();
+const BookingFormContent = ({ doctorId, specialtyId, specialtyName, price }: Props) => {
+  const stripe = useStripe();
+  const elements = useElements();
+  const { mutate, isPending } = useCreateBooking(stripe, elements);
   
   const { register, handleSubmit, watch, formState: { errors } } = useForm<BookingFormData>({
     resolver: zodResolver(bookingSchema),
@@ -48,7 +53,7 @@ const BookingForm = ({ doctorId, specialtyId, specialtyName, price }: Props) => 
 
         <div className="mb-10">
           <h4 className="font-black text-xl text-primary mb-6">اختر طريقة الدفع</h4>
-          <div className="flex flex-col md:flex-row gap-5">
+          <div className="flex flex-col md:flex-row gap-5 mb-5">
             <PaymentCard 
               value="on_site" 
               selected={selectedPayment} 
@@ -66,23 +71,43 @@ const BookingForm = ({ doctorId, specialtyId, specialtyName, price }: Props) => 
               icon={CreditCard} 
             />
           </div>
+
+          {selectedPayment === "online" && (
+            <div className="p-6 border border-gray-200 rounded-3xl bg-gray-50">
+              <label className="block text-sm font-bold text-gray-700 mb-4">بيانات البطاقة</label>
+              <div className="bg-white p-4 rounded-xl border border-gray-200">
+                <CardElement options={{
+                  style: { base: { fontSize: '16px', fontFamily: "Cairo, sans-serif" } }
+                }} />
+              </div>
+            </div>
+          )}
         </div>
 
         <button 
-          disabled={isPending}
+          type="submit"
+          disabled={isPending || (selectedPayment === "online" && !stripe)}
           className="w-full py-6 bg-primary text-white rounded-[28px] font-black text-2xl hover:bg-secondary transition-all flex items-center justify-center gap-4 shadow-xl shadow-primary/20 disabled:opacity-70 cursor-pointer"
         >
           {isPending ? (
             <Loader2 className="animate-spin" size={30} />
           ) : (
             <>
-              {selectedPayment === "online" ? "الانتقال لصفحة الدفع" : "تأكيد الحجز النهائي"}
+              {selectedPayment === "online" ? "تأكيد الحجز والدفع" : "تأكيد الحجز النهائي"}
               <ChevronLeft size={28} />
             </>
           )}
         </button>
       </form>
     </div>
+  );
+};
+
+const BookingForm = (props: Props) => {
+  return (
+    <Elements stripe={stripePromise}>
+      <BookingFormContent {...props} />
+    </Elements>
   );
 };
 

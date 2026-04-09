@@ -2,7 +2,6 @@ import Medicine from '../models/Medicine.js';
 // 1. إضافة دواء جديد
 export const addMedicine = async (req, res) => {
   try {
-    // سينيور تاتش: تأكد إن الـ Body مش فاضي
     if (!req.body.name || !req.body.price) {
       return res.status(400).json({ message: "برجاء كمال البيانات الأساسية" });
     }

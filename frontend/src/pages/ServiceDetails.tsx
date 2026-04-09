@@ -63,7 +63,7 @@ const ServiceDetails = () => {
           <div className="lg:w-2/3">
             <div className="bg-white p-2 rounded-[35px] shadow-sm mb-10">
               <img 
-                src={service.image || "https://images.unsplash.com/photo-1576091160550-2173dbc999ef?q=80"} 
+                  src={service.image?.startsWith('http') ? service.image : `http://localhost:5000/uploads/${service.image}`} 
                 alt={service.name} 
                 loading="lazy"
                 className="w-full h-[450px] object-cover rounded-[30px]"
@@ -142,21 +142,6 @@ const ServiceDetails = () => {
               <div className="absolute top-0 left-0 w-32 h-32 bg-secondary/10 rounded-full blur-3xl"></div>
               <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-white/5 rounded-full"></div>
             </div>
-
-            {/* 3. تحميل البروشور */}
-            <button className="group flex items-center justify-between p-6 bg-white border-2 border-dashed border-gray-200 rounded-[30px] hover:border-secondary hover:bg-secondary/5 transition-all">
-              <div className="flex items-center gap-4">
-                <div className="bg-primary/10 p-3 rounded-xl text-primary group-hover:bg-primary group-hover:text-white transition-all">
-                   <FileText size={24} />
-                </div>
-                <div className="text-right">
-                   <span className="block font-black text-primary">دليل الخدمات</span>
-                   <span className="text-xs text-gray-400 font-bold uppercase tracking-widest">PDF - 2.4 MB</span>
-                </div>
-              </div>
-              <span className="text-secondary font-black text-sm group-hover:underline">تحميل</span>
-            </button>
-
           </div>
         </div>
       </div>

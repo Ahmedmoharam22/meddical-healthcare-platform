@@ -24,8 +24,8 @@ const FeatureCards = () => {
             </div>
           </Link>
           <Link to="/appointment" className={`${features[2].bg} p-8 flex items-center justify-between text-white group hover:opacity-90 cursor-pointer transition`}>
-            <span className="text-body-2 font-medium">{features[2].title}</span>
-            <div className={`${features[2].bg === 'bg-accent' ? 'text-primary' : 'text-white'} opacity-80 group-hover:scale-110 transition`}>
+            <span className="text-body-2 text-black font-medium">{features[2].title}</span>
+            <div className={`${features[2].bg === 'bg-accent' ? 'text-secondary' : 'text-white'} opacity-80 group-hover:scale-110 transition`}>
               {features[2].icon}
             </div>
           </Link>

@@ -10,10 +10,10 @@ export default defineConfig({
   
   build: {
     // 1. ضغط الكود لأقصى درجة
-    minify: 'terser', 
+    minify: 'terser',
     terserOptions: {
       compress: {
-        drop_console: true, // بيشيل كل الـ console.log في النسخة النهائية عشان السرعة والأمان
+        drop_console: true,
         drop_debugger: true,
       },
     },

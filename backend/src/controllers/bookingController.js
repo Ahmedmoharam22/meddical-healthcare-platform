@@ -24,33 +24,24 @@ export const createBooking = async (req, res) => {
       paymentMethod
     });
 
-    // 3. لو الدفع في المجمع (On Site) - خلاص كدة المهمة تمت
     if (paymentMethod === 'on_site') {
       return res.status(201).json({ message: "تم الحجز بنجاح، الدفع عند الوصول", booking });
     }
 
-    // 4. لو الدفع أونلاين - نجهز جلسة سترايب
-    const session = await stripe.checkout.sessions.create({
-      payment_method_types: ['card'],
-      line_items: [{
-        price_data: {
-          currency: 'egp',
-          product_data: { name: `كشف: ${specialty.name}`, description: `حجز ميعاد بتاريخ ${appointmentDate}` },
-          unit_amount: specialty.price * 100, // سترايب بيحسب بالقروش
-        },
-        quantity: 1,
-      }],
-      mode: 'payment',
-      success_url: `${process.env.CLIENT_URL}/payment-success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${process.env.CLIENT_URL}/payment-failed`,
-      client_reference_id: booking._id.toString(),
+    const basePrice = Number(specialty.price) || 60; 
+    const stripeAmount = Math.max(Math.round(basePrice * 100), 5000); 
+
+    const paymentIntent = await stripe.paymentIntents.create({
+      amount: stripeAmount,
+      currency: 'egp',
+      metadata: { bookingId: booking._id.toString() },
     });
 
-    // تحديث الحجز بـ Session ID
-    booking.stripeSessionId = session.id;
+    // تحديث الحجز بـ PaymentIntent ID
+    booking.stripeSessionId = paymentIntent.id;
     await booking.save();
 
-    res.json({ url: session.url }); // بنبعت اللينك للفرونت يفتح صفحة سترايب
+    res.json({ success: true, clientSecret: paymentIntent.client_secret });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
